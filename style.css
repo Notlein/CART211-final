@@ -1,0 +1,26 @@
+body{
+    margin:0!important;
+    font-size:16px;
+    position:relative;
+}
+
+main {
+    width:100vw;
+    height:100vh;
+    background-image:url("img/pixel-art-dithering.jpg");
+    background-size: cover;
+}
+
+#menu-overlay-gauche {
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    font-size: 5em;
+    width: 1em;
+}
+
+.icon {
+    margin-bottom: 1em;
+}
+
+
