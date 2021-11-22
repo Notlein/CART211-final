@@ -2,6 +2,7 @@ body{
     margin:0!important;
     font-size:16px;
     position:relative;
+    overflow: hidden;
 }
 
 main {
@@ -9,6 +10,11 @@ main {
     height:100vh;
     background-image:url("img/pixel-art-dithering.jpg");
     background-size: cover;
+}
+
+footer {
+    position:fixed;
+    bottom:1em;
 }
 
 #menu-overlay-gauche {
@@ -24,3 +30,8 @@ main {
 }
 
 
+.windowframe{
+    background-color: white;
+    position:absolute;
+    border:1px black solid;
+}
