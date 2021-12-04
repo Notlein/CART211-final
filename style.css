@@ -7,7 +7,7 @@ body{
 
 main {
     width:100vw;
-    height:100vh;
+    height:calc(100vh - 50px);
     background-image:url("img/pixel-art-dithering.jpg");
     background-size: cover;
 }
@@ -34,4 +34,33 @@ footer {
     background-color: white;
     position:absolute;
     border:1px black solid;
+}
+
+.topframe {
+    
+    height:40px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 10px 1em 0;
+    
+}
+
+iframe{
+    width:calc(100% - 2px);
+    height:calc(100% - 30px);
+    
+}
+
+.topframe:hover{
+    cursor:move;
+}
+
+#bottom-bar{
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    border-top:1px black solid;
+    height:50px;
 }
