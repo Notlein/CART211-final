@@ -13,8 +13,7 @@ main {
 }
 
 footer {
-    position:fixed;
-    bottom:1em;
+    
 }
 
 #menu-overlay-gauche {
@@ -47,8 +46,8 @@ footer {
 }
 
 iframe{
-    width:calc(100% - 2px);
-    height:calc(100% - 30px);
+    width:calc(100% - 4px);
+    height:calc(100% - 54px);
     
 }
 
@@ -62,5 +61,45 @@ iframe{
     bottom:0;
     left:0;
     border-top:1px black solid;
-    height:50px;
+    height:60px;
+    background-image: url("img/dither-image.jpg");
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+
+.wholeframe{
+    position:relative;
+}
+
+.fullscr{
+    margin:0 2em 0 0;
+    
+}
+.fullscr:hover{
+    cursor:ns-resize;
+}
+
+.minimize{
+    margin:0 0 0 2em;
+    float:right;
+}
+.minimize:hover{
+    cursor:pointer;
+}
+
+.kill{
+    margin:0 0 0 2em;
+    float:right;
+}
+
+.kill:hover{
+    cursor:not-allowed;
+}
+
+
+#start-menu{
+    height:58px;
+    width:58px;
+    background-color:black;
+    color:white;
 }

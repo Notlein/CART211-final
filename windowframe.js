@@ -29,12 +29,19 @@ function windowframe(x,y,height, width) {
     }
   }
 
-  function addwindowframe(x,y,height, width, content){
+  function addwindowframe(x,y,height, width, content, title){
         var newframe = new windowframe (x,y,height, width);
         var b = newframe.windowHTML();
         document.body.appendChild(b);
         b.id = "window"+newframe.currentid;
-        b.innerHTML = content;
+    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe">'+title+'</div>';
+    b.innerHTML += '<iframe src='+content+'></iframe><div>';
+    b.addEventListener("mousedown",function(){
+      const cID = document.getElementById("window"+newframe.currentid);
+      
+      cID.style.zIndex = z;
+      z++;
+    })
       id++;
       z++;
   }
@@ -53,7 +60,7 @@ function windowframe(x,y,height, width) {
 
     document.body.appendChild(b);
     b.id = "window"+newframe.currentid;
-    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe">'+title+'</div>';
+    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'">|X|</span><span class="minimize" id="min'+newframe.currentid+'">|_|</span></div>';
     b.innerHTML += '<iframe src='+content+'></iframe><div>';
     b.addEventListener("mousedown",function(){
       const cID = document.getElementById("window"+newframe.currentid);
