@@ -61,13 +61,60 @@ function windowframe(x,y,height, width) {
     document.body.appendChild(b);
     b.id = "window"+newframe.currentid;
     b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'">|X|</span><span class="minimize" id="min'+newframe.currentid+'">|_|</span></div>';
-    b.innerHTML += '<iframe src='+content+'></iframe><div>';
+    b.innerHTML += '<iframe src='+content+'></iframe><span class="resize" id="resize'+newframe.currentid+'"><i class="fas fa-sort-down"></i></span><div>';
+
+    b.style.position = "absolute";
+
     b.addEventListener("mousedown",function(){
       const cID = document.getElementById("window"+newframe.currentid);
       
       cID.style.zIndex = z;
       z++;
-    })
+    });
+
+    const currentfs = document.getElementById("fs"+newframe.currentid);
+    const currentK = document.getElementById("K"+newframe.currentid);
+    const currentmin = document.getElementById("min"+newframe.currentid);
+    const currentwindow = document.getElementById("window"+newframe.currentid);
+
+    currentK.addEventListener("click", function(){
+      document.body.removeChild(b);
+    });
+
+    currentfs.addEventListener("click", function(){
+      b.style.position = "fixed";
+      b.style.width = "100vw";
+      b.style.height = "calc(100vh - 60px)";
+      b.style.top = "0";
+      b.style.left = "0";
+      currentwindow.className = "windowframe";
+    
+      
+    });
+
+    currentmin.addEventListener("click", function(){
+      let y = title +"";
+      z = "";
+      for (let i=0;i<8;i++){
+        z += y.charAt(i);
+      }
+      z += "...";
+
+
+      b.style.display = "none";
+      let x = document.createElement("button");
+      x.className = "bttm-icon";
+      x.id = "bttm-icon"+newframe.currentid;
+      x.innerHTML = z;
+      x.addEventListener("click",
+      function(){
+        b.style.display = "block";
+        document.getElementById("bottom-bar").removeChild(document.getElementById("bttm-icon"+newframe.currentid));
+      })
+      document.getElementById("bottom-bar").appendChild(x);
+
+    });
+
   id++;
   z++;
 }

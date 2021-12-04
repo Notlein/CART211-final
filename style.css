@@ -31,7 +31,7 @@ footer {
 
 .windowframe{
     background-color: white;
-    position:absolute;
+    
     border:1px black solid;
 }
 
@@ -65,6 +65,7 @@ iframe{
     background-image: url("img/dither-image.jpg");
     background-repeat: repeat-x;
     background-size: contain;
+    display:flex;
 }
 
 .wholeframe{
@@ -102,4 +103,24 @@ iframe{
     width:58px;
     background-color:black;
     color:white;
+}
+
+.resize{
+    position:absolute;
+    bottom: 0;
+    right:0;
+}
+
+.bttm-icon{
+    width: 80px;
+    height: 58px;
+    margin: 2px 2px;
+    background-color:dimgrey;
+    color: white;
+    text-align:center;
+}
+
+.fa-sort-down {
+    transform: rotate(-45deg);
+    font-size:0.75em;
 }
