@@ -49,6 +49,7 @@ function windowframe(x,y,height, width) {
 
   /*version randomize*/
   function addwindowframe(content, title){
+    
     let x = 0+(Math.floor(Math.random() * 40)) +"vw";
     let y = 0+(Math.floor(Math.random() * 20)) +"vh";
     let w = 40+(Math.floor(Math.random() * 40)) +"";
@@ -60,7 +61,7 @@ function windowframe(x,y,height, width) {
 
     document.body.appendChild(b);
     b.id = "window"+newframe.currentid;
-    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'">X</span><span class="minimize" id="min'+newframe.currentid+'">_</span></div>';
+    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'"><i class="fa fa-bomb" aria-hidden="true"></i></span><span class="minimize" id="min'+newframe.currentid+'">_</span></div>';
     b.innerHTML += '<iframe src='+content+'></iframe><span class="resize" id="resize'+newframe.currentid+'"><i class="fas fa-sort-down"></i></span><div>';
 
     b.style.position = "absolute";

@@ -22,13 +22,26 @@
       
 <div id="menu-overlay-gauche">
       <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
-        <!-- toggleIcon("icon1","fas fa-envelope-open","fas fa-envelope");-->
+        
         
           <i id="icon1" class="fas fa-envelope"></i>
         </div>
 
-        <div class="icon draggable" ondblclick='addwindowframe("https://wwwwwwwww.jodi.org/", "JODI.ORG")'>
-        <!-- +toggleIcon("icon2","fas fa-folder","fas fa-folder-open");-->
+        <script>var folder = new Array();
+        
+        folder[0] = new Array("https://fr.wikipedia.org/wiki/Net.art","Net.Art");
+        folder[1] = new Array("https://wwwwwwwww.jodi.org","JODI.org");
+        
+          
+        function selectFolder(){
+          let rand = Math.floor(Math.random() * folder.length);
+        return folder[rand];
+      }
+      
+        </script>
+
+        <div class="icon draggable" ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
+        
         
           <i id="icon2" class="fas fa-folder"></i>
           </div>
