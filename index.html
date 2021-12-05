@@ -27,17 +27,34 @@
 
 
     <script src="windowframe.js"></script>
-
+    <script>
+      var folder = new Array();
+      folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art","Net.Art");
+      folder[1] = new Array("https://wwwwwwwww.jodi.org","JODI.org");
+      folder[2] = new Array("https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small","Allez !");
+      folder[3] = new Array("Mange d'la shnoute", "On Vuk Cosic")
+       
+      function selectFolder(){
+        let rand = Math.floor(Math.random() * folder.length);
+      return folder[rand];
+    }
+      </script>
 
   </head>
 
 
   <body>
-    <header></header>
+<div id="start-screen"><div><video src="video/splash.mp4" autoplay muted></div></div>
 
       <main>
       
 <div id="menu-overlay-gauche">
+<!--Attention, ordre inversé-->
+  <div id="trash" class="icon draggable" ondblclick='addwindowframe("trash.html", "The Dump")'>
+        
+        
+    <i id="icon3" class="fas fa-dumpster"></i>
+  </div>
       <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
         
         
@@ -47,24 +64,15 @@
 
 
 
-        <script>
-        var folder = new Array();
-        folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art","Net.Art");
-        folder[1] = new Array("https://wwwwwwwww.jodi.org","JODI.org");
-        folder[2] = new Array("https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small","Allez !");
-        folder[3] = new Array("Mange d'la shnoute", "On Vuk Cosic")
-         
-        function selectFolder(){
-          let rand = Math.floor(Math.random() * folder.length);
-        return folder[rand];
-      }
-        </script>
+        
 
         <div class="icon draggable" ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
         
         
           <i id="icon2" class="fas fa-folder"></i>
           </div>
+
+          
 </div>
 
 <div id="start-box" style="display:none;">
@@ -75,7 +83,7 @@
       <li>D: drive</li>
       <li>Archives</li>
       <li onclick="logOff()">Log Off</li> <!-- Lock the user on a lockscreen without a password to log on "forgot your password ? That's too bad ;) Go play outside !" -->
-      <li>Power Off</li>
+      <li onclick="powerOff()">Power Off</li>
     </ul>
   </div>
 </div>
@@ -100,7 +108,7 @@
       </main>
 
 
-    <footer></footer>
+
       
   </body>
 </html>
