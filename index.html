@@ -7,11 +7,28 @@
 <meta property="og:url" content="hybrid.concordia.ca/max_go/final/index.html" />
 
     <title>Web Art Museum</title>
+
     <link rel="stylesheet" href="style.css">
+
+
     <script src="script.js"></script>
+
+
     <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
-    <script src="jquery-3.5.1.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+  
+
+
     <script src="windowframe.js"></script>
+
+
   </head>
 
 
@@ -27,17 +44,20 @@
           <i id="icon1" class="fas fa-envelope"></i>
         </div>
 
-        <script>var folder = new Array();
-        
-        folder[0] = new Array("https://fr.wikipedia.org/wiki/Net.art","Net.Art");
+
+
+
+        <script>
+        var folder = new Array();
+        folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art","Net.Art");
         folder[1] = new Array("https://wwwwwwwww.jodi.org","JODI.org");
-        
-          
+        folder[2] = new Array("https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small","Allez !");
+        folder[3] = new Array("Mange d'la shnoute", "On Vuk Cosic")
+         
         function selectFolder(){
           let rand = Math.floor(Math.random() * folder.length);
         return folder[rand];
       }
-      
         </script>
 
         <div class="icon draggable" ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
@@ -54,7 +74,7 @@
       <li>C: drive</li>
       <li>D: drive</li>
       <li>Archives</li>
-      <li>Log Off</li> <!-- Lock the user on a lockscreen without a password to log on "forgot your password ? That's too bad ;) Go play outside !" -->
+      <li onclick="logOff()">Log Off</li> <!-- Lock the user on a lockscreen without a password to log on "forgot your password ? That's too bad ;) Go play outside !" -->
       <li>Power Off</li>
     </ul>
   </div>
@@ -62,10 +82,25 @@
       <div id="bottom-bar">
         <button id="start-menu" onclick='openStart()'>Start</button>
       </div>
+
+      <div id="log-off">
+        <div id="smiley"><i class="far fa-smile"></i>
+
+        </div>
+
+
+        <div id="log-off-text">Oops, did you forget your password ?</div>
+      
+      <div style="display:flex;">
+        <label for="password">Your password :</label>
+        <input type="password" id="pw" name="password">
+        <button onclick="oops()">-></button>
+      </div>
+    </div>
       </main>
 
 
     <footer></footer>
-
+      
   </body>
 </html>
