@@ -60,7 +60,7 @@ function windowframe(x,y,height, width) {
 
     document.body.appendChild(b);
     b.id = "window"+newframe.currentid;
-    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'">|X|</span><span class="minimize" id="min'+newframe.currentid+'">|_|</span></div>';
+    b.innerHTML += '<div class="wholeframe"><div id="topframe'+newframe.currentid+'"; class="topframe"><span class="fullscr" id="fs'+newframe.currentid+'"><i class="fas fa-expand"></i></span>'+title+'<span class="kill" id="K'+newframe.currentid+'">X</span><span class="minimize" id="min'+newframe.currentid+'">_</span></div>';
     b.innerHTML += '<iframe src='+content+'></iframe><span class="resize" id="resize'+newframe.currentid+'"><i class="fas fa-sort-down"></i></span><div>';
 
     b.style.position = "absolute";
@@ -78,24 +78,37 @@ function windowframe(x,y,height, width) {
     const currentres = document.getElementById("resize"+newframe.currentid);
     const currentwindow = document.getElementById("window"+newframe.currentid);
 
+    const prevStyle = b.style;
+      const prevClasses = currentwindow.className;
+
     currentK.addEventListener("click", function(){
       document.body.removeChild(b);
     });
 
     currentfs.addEventListener("click", function(){
+      
+
+      if (b.style.position !== "fixed"){
       b.style.position = "fixed";
       b.style.width = "100vw";
       b.style.height = "calc(100vh - 60px)";
       b.style.top = "0";
       b.style.left = "0";
       currentwindow.className = "windowframe";
-    
+    } else {
+      let x = 0+(Math.floor(Math.random() * 40)) +"px";
+    let y = 0+(Math.floor(Math.random() * 20)) +"px";
+    let w = 40+(Math.floor(Math.random() * 40)) +"";
+    let h = 40+(Math.floor(Math.random() * 40)) +"";
+      b.setAttribute('class','windowframe draggable');
+      b.setAttribute('style','left:'+x+';top:'+y+';z-index:'+z+';width:'+h+'vw;height:'+w+'vh;');
+b.style.position = "absolute";
+    }
       
+
     });
 
     currentmin.addEventListener("click", function(){
-      
-
 
       b.style.display = "none";
 
@@ -105,7 +118,6 @@ function windowframe(x,y,height, width) {
         z += y.charAt(i);
         
       }
-      
       
       let x = document.createElement("button");
       x.className = "bttm-icon";
