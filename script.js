@@ -136,3 +136,18 @@ document.addEventListener('mousedown', function(event) {
   }
 
 });
+
+
+
+
+
+
+
+function openStart(){
+  const menustyle = document.getElementById("start-box").style;
+  if(menustyle.display !== "none"){
+    menustyle.display = "none";
+  } else {
+    menustyle.display = "block";
+  }
+}

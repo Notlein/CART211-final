@@ -75,6 +75,7 @@ function windowframe(x,y,height, width) {
     const currentfs = document.getElementById("fs"+newframe.currentid);
     const currentK = document.getElementById("K"+newframe.currentid);
     const currentmin = document.getElementById("min"+newframe.currentid);
+    const currentres = document.getElementById("resize"+newframe.currentid);
     const currentwindow = document.getElementById("window"+newframe.currentid);
 
     currentK.addEventListener("click", function(){
@@ -93,15 +94,19 @@ function windowframe(x,y,height, width) {
     });
 
     currentmin.addEventListener("click", function(){
-      let y = title +"";
-      z = "";
-      for (let i=0;i<8;i++){
-        z += y.charAt(i);
-      }
-      z += "...";
+      
 
 
       b.style.display = "none";
+
+      let y = title +"";
+      z = "";
+      for (let i=0;i<12;i++){
+        z += y.charAt(i);
+        
+      }
+      
+      
       let x = document.createElement("button");
       x.className = "bttm-icon";
       x.id = "bttm-icon"+newframe.currentid;
@@ -109,7 +114,7 @@ function windowframe(x,y,height, width) {
       x.addEventListener("click",
       function(){
         b.style.display = "block";
-        document.getElementById("bottom-bar").removeChild(document.getElementById("bttm-icon"+newframe.currentid));
+        document.getElementById("bottom-bar").removeChild(x);
       })
       document.getElementById("bottom-bar").appendChild(x);
 

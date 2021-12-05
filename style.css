@@ -18,14 +18,21 @@ footer {
 
 #menu-overlay-gauche {
     position: absolute;
-    top: 1.5em;
-    right: 1em;
+    width:calc(100% - 0.5em);
+    height:calc(100%);
     font-size: 5em;
-    width: 1em;
+    /* top:0.5em; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* margin:1em; */
 }
 
 .icon {
-    margin-bottom: 1em;
+    /* margin: 0.5em 0; */
+    
+
+    right:15px;
 }
 
 
@@ -103,24 +110,69 @@ iframe{
     width:58px;
     background-color:black;
     color:white;
+    
+}
+.start-header{
+    padding:0.5em 0 0.5em 1.75em;
+    font-weight: 700;
+}
+
+#start-box{
+    width:200px;
+    height:450px;
+    position:absolute;
+    bottom:0;
+    background-color: lightgrey;
+    overflow:hidden;
+    
+}
+
+.start-content ul {
+    display:flex;
+    height:400px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+padding: 0;
+    list-style: none;
+}
+
+.start-content ul>li {
+    height:80px;
+    width:calc(100% - 3.8em - 2px);
+    border-bottom: 1px solid grey;
+    padding:1.9em;
+    cursor:default;
+}
+.start-content ul>li:hover {
+    background-color: #303030;
+    color:whitesmoke;
+}
+.start-content ul>li:last-child {
+    
+    border-bottom: none;
+    
 }
 
 .resize{
-    position:absolute;
-    bottom: 0;
-    right:0;
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    font-size: 1.5em;
 }
 
 .bttm-icon{
-    width: 80px;
+    max-width: 125px;
     height: 58px;
     margin: 2px 2px;
     background-color:dimgrey;
     color: white;
     text-align:center;
+    padding:2px;
 }
 
 .fa-sort-down {
     transform: rotate(-45deg);
     font-size:0.75em;
+    
 }

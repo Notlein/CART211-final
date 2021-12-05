@@ -21,17 +21,33 @@
       <main>
       
 <div id="menu-overlay-gauche">
-      <div class="icon" ondblclick='toggleIcon("icon1","fas fa-envelope-open","fas fa-envelope");addwindowframe("mailbox.html", "Your mailbox")'>
+      <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
+        <!-- toggleIcon("icon1","fas fa-envelope-open","fas fa-envelope");-->
+        
           <i id="icon1" class="fas fa-envelope"></i>
         </div>
 
-        <div class="icon" ondblclick='toggleIcon("icon2","fas fa-folder","fas fa-folder-open");addwindowframe("https://wwwwwwwww.jodi.org/", "JODIJODIJODIJODI")'>
+        <div class="icon draggable" ondblclick='addwindowframe("https://wwwwwwwww.jodi.org/", "JODI.ORG")'>
+        <!-- +toggleIcon("icon2","fas fa-folder","fas fa-folder-open");-->
+        
           <i id="icon2" class="fas fa-folder"></i>
           </div>
 </div>
 
+<div id="start-box" style="display:none;">
+  <div class="start-header">Start Menu</div>
+  <div class="start-content">
+    <ul>
+      <li>C: drive</li>
+      <li>D: drive</li>
+      <li>Archives</li>
+      <li>Log Off</li> <!-- Lock the user on a lockscreen without a password to log on "forgot your password ? That's too bad ;) Go play outside !" -->
+      <li>Power Off</li>
+    </ul>
+  </div>
+</div>
       <div id="bottom-bar">
-        <button id="start-menu" onclick='null'>Start</button>
+        <button id="start-menu" onclick='openStart()'>Start</button>
       </div>
       </main>
 
