@@ -1,39 +1,62 @@
-.grid{
+.grid {
     font-size: 1.5em;
-    width:100%;
+    width: 100%;
 }
 
-body{
-    height:100vh;
-    width:100vw;
-    background-color:lightblue;
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: lightblue;
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 14px;
-    
+    margin: 0;
 }
-.header{
-    width:100%;
-    height:50px;
 
+.header {
+    width: 100%;
+    height: 50px;
 }
 
 .container {
-    width:100%;
-    height:100%;
-    display:flex;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
+.left {
+    width: 35%;
+    height: 100%;
 
-
-.left{
-    width:35%;
-    height:100%;
-    
 }
 
-.right{
-    width:65%;
-    height:100%;
-    
+ul {
+    margin: 0;
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+}
+
+ul>li {
+    height: 80px;
+    width: calc(100% - 3.8em - 2px);
+    border: 1px solid grey;
+    padding: 1.9em;
+    cursor: default;
+}
+
+ul>li:hover {
+    background-color: #303030;
+    color: whitesmoke;
+}
+
+.right {
+    width: 65%;
+    height: calc(100vh - 70px);
+    background-color: white;
+    border: 1px grey solid;
 }

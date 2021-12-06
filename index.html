@@ -1,114 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
+
+  <!-- METADATA -->
     <meta charset="utf-8">
     <meta property="og:title" content="Web Art Museum" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="hybrid.concordia.ca/max_go/final/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url"
+        content="hybrid.concordia.ca/max_go/final/index.html" />
 
     <title>Web Art Museum</title>
 
+<!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    
+<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/83483ef559.js"
+        crossorigin="anonymous"></script>
 
+        <!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
+    <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
+    <!-- Custom JS -->
+    <script src="windowframe.js"></script>
     <script src="script.js"></script>
 
 
-    <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
-
-
-
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-
-  
-
-
-    <script src="windowframe.js"></script>
+      <!-- Custom script : Array for the folders. Left in HTML for better control -->
+      <!-- folder[0] for the website, folder[1] for the displayed name -->
     <script>
-      var folder = new Array();
-      folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art","Net.Art");
-      folder[1] = new Array("https://wwwwwwwww.jodi.org","JODI.org");
-      folder[2] = new Array("https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small","Allez !");
-      folder[3] = new Array("Mange d'la shnoute", "On Vuk Cosic")
-       
-      function selectFolder(){
-        let rand = Math.floor(Math.random() * folder.length);
-      return folder[rand];
-    }
-      </script>
+        var folder = new Array();
+        folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art",
+            "Net.Art");
+        folder[1] = new Array("https://wwwwwwwww.jodi.org", "JODI.org");
+        folder[2] = new Array(
+            "https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small",
+            "Allez !");
+        folder[3] = new Array("img/place-indexed.png", "r/place")
 
-  </head>
+        function selectFolder() {
+            let rand = Math.floor(Math.random() * folder.length);
+            return folder[rand];
+        }
+    </script>
 
 
-  <body>
-<div id="start-screen"><div><video src="video/splash.mp4" autoplay muted></div></div>
-
-      <main>
-      
-<div id="menu-overlay-gauche">
-<!--Attention, ordre inversé-->
-  <div id="trash" class="icon draggable" ondblclick='addwindowframe("trash.html", "The Dump")'>
-        
-        
-    <i id="icon3" class="fas fa-dumpster"></i>
-  </div>
-      <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
-        
-        
-          <i id="icon1" class="fas fa-envelope"></i>
-        </div>
+</head>
 
 
 
 
-        
-
-        <div class="icon draggable" ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
-        
-        
-          <i id="icon2" class="fas fa-folder"></i>
-          </div>
-
-          
-</div>
-
-<div id="start-box" style="display:none;">
-  <div class="start-header">Start Menu</div>
-  <div class="start-content">
-    <ul>
-      <li>C: drive</li>
-      <li>D: drive</li>
-      <li>Archives</li>
-      <li onclick="logOff()">Log Off</li> <!-- Lock the user on a lockscreen without a password to log on "forgot your password ? That's too bad ;) Go play outside !" -->
-      <li onclick="powerOff()">Power Off</li>
-    </ul>
-  </div>
-</div>
-      <div id="bottom-bar">
-        <button id="start-menu" onclick='openStart()'>Start</button>
-      </div>
-
-      <div id="log-off">
-        <div id="smiley"><i class="far fa-smile"></i>
-
-        </div>
-
-
-        <div id="log-off-text">Oops, did you forget your password ?</div>
-      
-      <div style="display:flex;">
-        <label for="password">Your password :</label>
-        <input type="password" id="pw" name="password">
-        <button onclick="oops()">-></button>
-      </div>
+<body>
+  <!-- Splash screen (loading...) -->
+    <div id="start-screen">
+        <div><video src="video/splash.mp4" autoplay muted></div>
     </div>
-      </main>
+
+    <main>
+
+      <!-- Central container with icons -->
+        <div onclick="if(document.getElementById('start-box').style.display === 'block')openStart();"
+            id="menu-overlay-gauche">
+
+            <!-- WARNING : Inverted order -->
+
+            <!-- Trash -->
+            <div id="trash" class="icon draggable"
+                ondblclick='addwindowframe("trash.html", "The Dump")'>
+                <i id="icon3" class="fas fa-dumpster"></i>
+            </div>
+
+            <!-- Random folder -->
+            <div class="icon draggable"
+            ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
+            <i class="fas fa-folder"></i>
+        </div>
+
+        <!-- Random folder -->
+        <div class="icon draggable"
+        ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
+        <i class="fas fa-hdd"></i>
+</div>
+<!-- Random folder -->
+<div class="icon draggable"
+                ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
+                <i class="fas fa-hdd"></i>
+            </div>
+
+<!-- Mailbox -->
+<div class="icon draggable"
+                ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
+                <i id="icon1" class="fas fa-envelope"></i>
+            </div>
+        </div>
+
+<!-- START MENU -->
+        <div id="start-box" style="display:none;">
+            <div class="start-header">Start Menu</div>
+            <div class="start-content">
+                <ul>
+
+<!-- C: drive to access system files. No permission allowed. -->
+                    <li onclick="addwindowframe('folders/C.html','C: drive');openStart()">C: drive</li>
+
+<!-- D: drive is corrupted. -->
+                    <li onclick="addwindowframe('folders/D.html','D: drive');openStart()">D: drive</li>
+
+<!-- The actual content, sparated in folders. -->
+                    <li onclick="addwindowframe('folders/archives.html','My Archives. (Take Care of Them)');openStart()">Archives</li>
+
+                    <!-- Lock the user on a lockscreen without a password to log on. Forgot your password ? That's too bad ;) Go play outside! -->
+                    <li onclick="logOff();openStart()">Log Off</li>
+
+                    <!-- Shut down the website FOREVER! (until you refresh) -->
+                    <li onclick="powerOff();openStart()">Power Off</li>
+                </ul>
+            </div>
+        </div>
 
 
+        <!-- BOTTOM BAR -->
+        <div id="bottom-bar">
+            <button id="start-menu" onclick='openStart()'>Start</button>
+        </div>
 
-      
-  </body>
+        <!-- LOG OFF LAYER -->
+        <div id="log-off">
+            <div id="smiley"><i class="far fa-smile"></i>
+
+            </div>
+
+            <div id="log-off-text">Oops, did you forget your password ?</div>
+
+            <div style="display:flex;">
+                <label for="password">Your password :</label>
+                <input type="password" id="pw" name="password">
+                <button onclick="oops()">-></button>
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+
 </html>
