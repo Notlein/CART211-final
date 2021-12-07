@@ -74,3 +74,6 @@ function powerOff() {
 function changeHTML(id, content){
   $(id).html(content);
 }
+
+
+

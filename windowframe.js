@@ -87,39 +87,49 @@ function addwindowframe(content, title) {
     const currentmin = document.getElementById("min" + newframe.currentid);
     const currentwindow = document.getElementById(b.id);
 
-
+// listener on the windowframe object to close the start menu when selected
     currentwindow.addEventListener("click", function() {
         closeStart();
     })
 
+    // 'Kill' or close button
     currentK.addEventListener("click", function() {
         document.body.removeChild(b);
     });
 
+    // Fullscreen (can still be dragged)
     currentfs.addEventListener("click", function() {
         b.style.width = "100vw";
         b.style.height = "calc(100vh - 60px)";
         b.style.top = "0";
         b.style.left = "0";
-        currentwindow.className = "windowframe draggable";
+        
     });
 
 
-
+// Minimize function
     currentmin.addEventListener("click", function() {
+
+        // This part hides the windowframe
         b.style.display = "none";
+
+        // This part takes the first 12 characters of the windowframe's title
         let y = title + "";
         z = "";
         for (let i = 0; i < 12; i++) {
             z += y.charAt(i);
         }
+
+        // this part creates the button in the bottom frame
         let x = document.createElement("button");
         x.className = "bttm-icon";
         x.id = "bttm-icon" + newframe.currentid;
         x.innerHTML = z;
+        // clicking the bottom button makes sur the start menu closes
         x.addEventListener("click", function() {
             closeStart();
         })
+        // clicking the bottom button also brings back the windowframe and deletes the bottom button
         x.addEventListener("click",
             function() {
                 b.style.display = "block";
@@ -130,11 +140,21 @@ function addwindowframe(content, title) {
     });
 
 
-    
+    // JQUERY : To make the windowframe resizable and draggable
     $("#windowframe" + id).resizable().draggable();
     id++;
     z++;
 }
+// end of addwindowframe(content,title);
 
+var uhoh
 
+function uhOh(){
+    
+    uhoh = setInterval(function(){addwindowframe('randomcolor.html','Uh-Oh!')}, 100);
 
+  }
+
+  function stop(){
+      clearInterval(uhoh);
+  }
