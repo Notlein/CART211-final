@@ -64,7 +64,7 @@ function addwindowframe(content, title) {
     document.body.appendChild(b);
 
 
-    b.id = "resizable" + newframe.currentid;
+    b.id = "windowframe" + newframe.currentid;
     b.innerHTML += '<div class="wholeframe"><div id="topframe' + newframe
         .currentid + '"; class="topframe"><span class="fullscr" id="fs' +
         newframe.currentid + '"><i class="fas fa-expand"></i></span><span class="inside-text">' + title +
@@ -76,8 +76,7 @@ function addwindowframe(content, title) {
 
 
     b.addEventListener("mousedown", function() {
-        const cID = document.getElementById("resizable" + newframe
-            .currentid);
+        const cID = document.getElementById(b.id);
         cID.style.zIndex = z;
         z++;
     });
@@ -86,7 +85,7 @@ function addwindowframe(content, title) {
     const currentfs = document.getElementById("fs" + newframe.currentid);
     const currentK = document.getElementById("K" + newframe.currentid);
     const currentmin = document.getElementById("min" + newframe.currentid);
-    const currentwindow = document.getElementById("resizable" + newframe.currentid);
+    const currentwindow = document.getElementById(b.id);
 
 
     currentwindow.addEventListener("click", function() {
@@ -132,7 +131,7 @@ function addwindowframe(content, title) {
 
 
     
-    $("#resizable" + id).resizable().draggable();
+    $("#windowframe" + id).resizable().draggable();
     id++;
     z++;
 }
