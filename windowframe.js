@@ -147,14 +147,20 @@ function addwindowframe(content, title) {
 }
 // end of addwindowframe(content,title);
 
-var uhoh
+var uhoh 
 
 function uhOh(){
     
-    uhoh = setInterval(function(){addwindowframe('randomcolor.html','Uh-Oh!')}, 100);
+    uhoh = setInterval(function oops(){
+        addwindowframe('randomcolor.html','Uh-Oh!');
+        return;
+    }, 100);
 
   }
 
   function stop(){
-      clearInterval(uhoh);
-  }
+    clearInterval(uhoh);
+}
+
+
+  
