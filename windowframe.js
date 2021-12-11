@@ -91,9 +91,10 @@ function addwindowframe(content, title) {
     b.innerHTML += '<iframe src=' + content + '></iframe><div>';
     b.style.position = "absolute";
 
+
+    const cID = document.getElementById(b.id);
     // special function to make sure the windowframe that's clicked is on top of the others. the z increment is also repeated at the end of the whole addwindowframe function. 
     b.addEventListener("mousedown", function() {
-        const cID = document.getElementById(b.id);
         cID.style.zIndex = z;
         z++;
     });
@@ -132,7 +133,7 @@ function addwindowframe(content, title) {
 
         // This part takes the first 12 characters of the windowframe's title
         let y = title + "";
-        z = "";
+        let z = "";
         for (let i = 0; i < 12; i++) {
             z += y.charAt(i);
         }
@@ -142,17 +143,25 @@ function addwindowframe(content, title) {
         x.className = "bttm-icon";
         x.id = "bttm-icon" + newframe.currentid;
         x.innerHTML = z;
+
         // clicking the bottom button makes sur the start menu closes
         x.addEventListener("click", function() {
             closeStart();
         })
+
         // clicking the bottom button also brings back the windowframe and deletes the bottom button
         x.addEventListener("click",
             function() {
                 b.style.display = "block";
+                z++;
+                b.style.zIndex = z;
+                
+
                 document.getElementById("bottom-bar").removeChild(
                     x);
             })
+
+    // add the button at the bottom 
         document.getElementById("bottom-bar").appendChild(x);
     });
 
@@ -189,4 +198,6 @@ function addwindowframe(content, title) {
   
 
 
+ 
+      
   

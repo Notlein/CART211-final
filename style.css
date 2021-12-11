@@ -10,7 +10,7 @@ body {
 main {
     width: 100%;
     height: calc(100% - 50px);
-    background-image: url("img/pixel-art-dithering.jpg");
+    background-image: url("img/quickbg2.png");
     background-size: cover;
     font-family: ChicagoOld;
     font-size:12px;
@@ -38,12 +38,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    color: white;
+    mix-blend-mode: difference;
 }
 
 
 .undericon{
     font-size:1rem;
+    
+    letter-spacing: 1px;
 }
 /* 
 #trash {
@@ -144,12 +147,14 @@ iframe {
 /* Start menu and list */
 
 #start-menu {
-    height: 58px;
-    width: 58px;
+    height: 60px;
+    width: 80px;
     background-color: black;
     color: white;
     z-index: 1;
     font-weight: 800;
+    font-family: 'ChicagoOld';
+    letter-spacing: 1px;
 }
 
 .start-header {
@@ -190,8 +195,12 @@ iframe {
 }
 
 .start-content ul>li:hover {
-    background-color: #303030;
+    background-color: #0e0e0e;
     color: whitesmoke;
+}
+.start-content ul>li:active {
+    background-color: #4d4d4d;
+    color: antiquewhite;
 }
 
 .start-content ul>li::selection {
@@ -214,13 +223,15 @@ iframe {
 
 /* buttons after minimize */
 .bttm-icon {
-    max-width: 125px;
-    height: 58px;
-    margin: 2px 2px;
+    width: 130px;
+    height: 60px;
     background-color: dimgrey;
     color: white;
     text-align: center;
-    padding: 2px;
+    padding: 10px;
+    font-family: ChicagoOld;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /* a verifier ? */
@@ -302,6 +313,7 @@ iframe {
 
 
 
+
 /* Custom Fonts */
 
 @font-face {
@@ -342,4 +354,10 @@ iframe {
       padding-left:0.15rem;
   }
 
- 
+
+
+  .icon:active{
+    background-color:white;
+    color: black;
+    
+  }

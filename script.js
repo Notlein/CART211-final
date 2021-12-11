@@ -44,6 +44,9 @@ function logOff() {
       logoffstyle.zIndex = 999;
       logoffstyle.opacity = '1';
   }
+  document.getElementById("mitsub").addEventListener("mousedown", function() {
+    document.getElementById("smiley") = '<i class="far fa-surprise"></i>';
+  })
 }
 
 
