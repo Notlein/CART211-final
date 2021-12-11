@@ -42,7 +42,7 @@
             "Allez !");
         folder[3] = new Array("img/place-indexed.png", "r/place")
 
-        function selectFolder() {
+        function selectWebpage() {
             let rand = Math.floor(Math.random() * folder.length);
             return folder[rand];
         }
@@ -71,30 +71,30 @@
             <!-- Trash -->
             <div id="trash" class="icon draggable"
                 ondblclick='addwindowframe("trash.html", "The Dump")'>
-                <i id="icon3" class="fas fa-dumpster"></i>
+                <i id="icon3" class="fas fa-dumpster"></i><span class="undericon">Trash</span>
             </div>
 
-            <!-- Random folder -->
+            <!-- Random Folder -->
             <div class="icon draggable"
-            ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
-            <i class="fas fa-folder"></i>
+            ondblclick='let temp = selectWebpage();addwindowframe(temp[0], temp[1])'>
+            <i class="fas fa-folder"></i><span class="undericon">RANDOM</span>
         </div>
 
-        <!-- Random folder -->
+        <!-- Random Webpage -->
         <div class="icon draggable"
-        ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
-        <i class="fas fa-hdd"></i>
+        ondblclick="addwindowframe('folders/archives.html','My Archives. (Take Care of Them)')">
+        <i class="fas fa-archive"></i><span class="undericon">Archives</span>
 </div>
-<!-- Random folder -->
+<!-- Random Webpage -->
 <div class="icon draggable"
-                ondblclick='let temp = selectFolder();addwindowframe(temp[0], temp[1])'>
-                <i class="fas fa-hdd"></i>
+                ondblclick="addwindowframe('folders/C.html','C: drive')">
+                <i class="fas fa-hdd"></i><span class="undericon">C: Drive</span>
             </div>
 
 <!-- Mailbox -->
 <div class="icon draggable"
                 ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
-                <i id="icon1" class="fas fa-envelope"></i>
+                <i id="icon1" class="fas fa-envelope"></i><span class="undericon">Mailbox</span>
             </div>
         </div>
 

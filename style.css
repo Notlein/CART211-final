@@ -16,6 +16,7 @@ main {
     font-size:12px;
 }
 
+/* Messed up container -  do not touch */
 #menu-overlay-gauche {
     position: absolute;
     width: 100%;
@@ -24,7 +25,7 @@ main {
     /* top: 0.5em; */
     display: flex;
     flex-direction: column-reverse;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     /* margin: 1em; */
     justify-content: flex-end;
     align-content: flex-start;
@@ -33,18 +34,38 @@ main {
 
 .icon {
     margin: 0.75em 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
+
+.undericon{
+    font-size:1rem;
+}
+/* 
 #trash {
     bottom: 0;
     position: absolute;
-}
+} */
 
+
+
+/* Windowframe */
+
+.wholeframe {
+    position: relative;
+}
 .windowframe {
     background-color: white;
     border: 1px black solid;
     font-family: ChicagoOld;
 }
+
+
+
 
 .topframe {
     height: 40px;
@@ -54,33 +75,10 @@ main {
     padding: 10px 1em 0;
     display: flex;
 }
-
-iframe {
-    width: calc(100% - 4px);
-    height: calc(100% - 54px);
-}
-
 .topframe:hover {
     cursor: move;
 }
 
-#bottom-bar {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    border-top: 1px black solid;
-    height: 60px;
-    background-image: url("img/dither-image.jpg");
-    background-repeat: repeat-x;
-    background-size: contain;
-    display: flex;
-    z-index: 0;
-}
-
-.wholeframe {
-    position: relative;
-}
 
 .fullscr {
     margin: 0 2em 0 0;
@@ -89,6 +87,13 @@ iframe {
 .fullscr:hover {
     cursor: ns-resize;
 }
+
+
+.inside-text{
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+  }
 
 .minimize {
     padding-left: 1em;
@@ -113,6 +118,30 @@ iframe {
 .kill:hover {
     cursor: not-allowed;
 }
+
+iframe {
+    width: calc(100% - 4px);
+    height: calc(100% - 54px);
+}
+
+
+/* Bottom bar */
+
+#bottom-bar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px black solid;
+    height: 60px;
+    background-image: url("img/dither-image.jpg");
+    background-repeat: repeat-x;
+    background-size: contain;
+    display: flex;
+    z-index: 0;
+}
+
+/* Start menu and list */
 
 #start-menu {
     height: 58px;
@@ -174,6 +203,8 @@ iframe {
     border-bottom: none;
 }
 
+/* other resize button ? */
+
 .resize {
     position: absolute;
     bottom: -6px;
@@ -181,6 +212,7 @@ iframe {
     font-size: 1.5em;
 }
 
+/* buttons after minimize */
 .bttm-icon {
     max-width: 125px;
     height: 58px;
@@ -191,10 +223,14 @@ iframe {
     padding: 2px;
 }
 
+/* a verifier ? */
 .fa-sort-down {
     transform: rotate(-45deg);
     font-size: 0.75em;
 }
+
+
+/* Log off Screen */
 
 #log-off {
     z-index: -999;
@@ -217,6 +253,10 @@ iframe {
     display: none;
 }
 
+
+
+/* LOADING SCREEN */
+
 #start-screen {
     width: 100vw;
     height: 100vh;
@@ -230,6 +270,7 @@ iframe {
     background-color: white;
 }
 
+
 #start-screen div {
     width: 49vw;
     overflow: hidden;
@@ -241,6 +282,11 @@ iframe {
     width: 101%;
     margin-right: -5px;
 }
+
+
+
+
+/* resize button */
 
 .ui-icon {
     background-size: 2000% !important;
@@ -256,12 +302,16 @@ iframe {
 
 
 
+/* Custom Fonts */
+
 @font-face {
     font-family: ChicagoOld;
     src: url(pixChicago.woff);
   }
 
 
+
+/* Scrollbar style */
 
   /* width */
   ::-webkit-scrollbar {
@@ -292,8 +342,4 @@ iframe {
       padding-left:0.15rem;
   }
 
-  .inside-text{
-    white-space: nowrap;
-    text-overflow: clip;
-    overflow: hidden;
-  }
+ 
