@@ -6,10 +6,10 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
     color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 14px;
+    font-family: ChicagoOld, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 9px;
     margin: 0;
 }
 
@@ -47,10 +47,11 @@ ul>li {
     border: 1px solid grey;
     padding: 1.9em;
     cursor: default;
+    
 }
 
 ul>li:hover {
-    background-color: #303030;
+    background-color:rgb(5, 130, 172);
     color: whitesmoke;
 }
 
@@ -89,4 +90,11 @@ ul>li:hover {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 99, 99, 0.5);
+  }
+
+  /* Custom Fonts */
+
+@font-face {
+    font-family: ChicagoOld;
+    src: url(pixChicago.woff);
   }
