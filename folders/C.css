@@ -50,19 +50,30 @@ text-align: center;
 }
 
 
+.wholeframe {
+    position: relative;
+}
 .windowframe {
     background-color: white;
     border: 1px black solid;
     font-family: ChicagoOld;
 }
 
+
+
+
 .topframe {
     height: 40px;
     background-color: black;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
     padding: 10px 1em 0;
+    display: flex;
 }
+.topframe:hover {
+    cursor: move;
+}
+
 
 iframe {
     width: calc(100% - 4px);
@@ -76,7 +87,6 @@ iframe {
 .wholeframe {
     position: relative;
 }
-
 .fullscr {
     margin: 0 2em 0 0;
 }
@@ -85,9 +95,20 @@ iframe {
     cursor: ns-resize;
 }
 
+
+.inside-text{
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow: hidden;
+  }
+
 .minimize {
-    margin: 0 0 0 2em;
-    float: right;
+    padding-left: 1em;
+    margin: auto;
+    position: absolute;
+    right: 50px;
+    background-color: black;
+    width: 1em;
 }
 
 .minimize:hover {
@@ -95,12 +116,10 @@ iframe {
 }
 
 .kill {
-    margin: 0 0 0 2em;
-    float: right;
-}
-
-.kill:hover {
-    cursor: not-allowed;
+    padding-left: 1em;
+    position: absolute;
+    right: 15px;
+    background-color: black;
 }
 
 @font-face {
@@ -108,13 +127,6 @@ iframe {
     src: url(../pixChicago.woff);
   }
 
-.inside-text{
-  text-overflow: clip;
-
-  /* Required for text-overflow to do anything */
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 
   /* width */
