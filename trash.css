@@ -16,3 +16,26 @@ main {
     background-image: url("img/garbage_monster.jpg");
     background-size: cover;
 }
+
+
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(54, 54, 54,0.5);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 99, 99, 0.5);
+  }

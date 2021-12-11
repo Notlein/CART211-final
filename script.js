@@ -68,12 +68,25 @@ function powerOff() {
       height: "4px",
       width: "4px",
       opacity: 0.35
-  },'fast').animate({opacity:0},5000);
+  },'fast').animate({opacity:0},4000);
+  
+  setTimeout(function removeMain(){$("main").remove();$("div").remove();} , 5000 )
+     
+
+  
+ 
+
+
 }
 
 function changeHTML(id, content){
   $(id).html(content);
 }
+
+
+
+    
+
 
 
 

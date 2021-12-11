@@ -108,7 +108,7 @@
                     <li onclick="addwindowframe('folders/C.html','C: drive');openStart()">C: drive</li>
 
 <!-- D: drive is corrupted. -->
-                    <li onclick="addwindowframe('folders/D.html','D: drive');openStart()">D: drive</li>
+                    <li onclick="addwindowframe('folders/D.html','|/$%/??(O&%?&*)&data.encrypted(*?&');openStart()">D: drive</li>
 
 <!-- The actual content, sparated in folders. -->
                     <li onclick="addwindowframe('folders/archives.html','My Archives. (Take Care of Them)');openStart()">Archives</li>
@@ -117,7 +117,7 @@
                     <li onclick="logOff();openStart()">Log Off</li>
 
                     <!-- Shut down the website FOREVER! (until you refresh) -->
-                    <li onclick="powerOff();openStart()">Power Off</li>
+                    <li onclick="powerOff();killAll();openStart()">Power Off</li>
                 </ul>
             </div>
         </div>
@@ -139,14 +139,17 @@
             <div style="display:flex;">
                 <label for="password">Your password&nbsp;:&nbsp;</label>
                 <input type="password" id="pw" name="password">
-                <button onclick="oops()">&nbsp;->&nbsp;</button>
+                <button id="mitsub" onclick="oops()">&nbsp;>>&nbsp;</button>
             </div>
+
         </div>
 
 
         <!-- FIN -->
     </main>
-
+<script>
+    $(".draggable").draggable();
+</script>
 </body>
 
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>C: drive</title>
+    <link rel="stylesheet" href="archives.css">
+    
+    <script src="../windowframe.js"></script>
+    <script src="../script.js"></script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/83483ef559.js"
+crossorigin="anonymous"></script>
+
+<!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
+<link rel="stylesheet"
+href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+</head>
+
+
+
+<body>
+    <main>
+        <div id="grid-C">
+            <!-- 16x16 grid-table -->
+        <table>
+            <tr>
+                <td ondblclick="window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early Internet Art</td>
+                <td ondblclick="window.location = 'communities.html';" id="icon2"><i class="fas fa-folder"></i><br>Proliferation and communities</td>
+                <td ondblclick="window.location = 'socialmedia.html';" id="icon3"><i class="fas fa-folder"></i><br>Social media and organic interactions of net.art</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        </div>
+    </main>
+</body>
+
+<script>
+    $("#icon1").draggable();
+    $("#icon2").draggable();
+    $("#icon3").draggable();
+
+    
+</script>
+</html>
