@@ -1,51 +1,53 @@
-
-body{
+body {
     background-color: white;
-    width:100vw;
-    height:100vh;
-    font-size:24px;
+    width: 100vw;
+    height: 100vh;
+    font-size: 24px;
     font-family: ChicagoOld;
-    font-size:12px;
+    font-size: 12px;
 }
 
-#grid-C table{
-    width:75vw;
-    height:50vh;
+#grid-C table {
+    width: 75vw;
+    height: 50vh;
 }
+
 #grid-C table tbody {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
+
 #grid-C table tr {
-    width:100%;
-    height:25%;
+    width: 100%;
+    height: 25%;
 }
-#grid-C table tr td{
-    width:25%;
-    height:100%;
-    margin:1em;
-text-align: center;
+
+#grid-C table tr td {
+    width: 25%;
+    height: 100%;
+    margin: 1em;
+    text-align: center;
 
 }
 
 
-#icon1 {
+#icon1 {}
 
-}
-#icon2 {
-    
-}
+#icon2 {}
+
 #icon3 {
-    opacity:0.35;
+    opacity: 0.35;
 }
 
-#icon1 i{
+#icon1 i {
     font-size: 2.25em;
 }
-#icon2 i{
+
+#icon2 i {
     font-size: 2.25em;
 }
-#icon3 i{
+
+#icon3 i {
     font-size: 2.25em;
 }
 
@@ -53,6 +55,7 @@ text-align: center;
 .wholeframe {
     position: relative;
 }
+
 .windowframe {
     background-color: white;
     border: 1px black solid;
@@ -70,6 +73,7 @@ text-align: center;
     padding: 10px 1em 0;
     display: flex;
 }
+
 .topframe:hover {
     cursor: move;
 }
@@ -87,6 +91,7 @@ iframe {
 .wholeframe {
     position: relative;
 }
+
 .fullscr {
     margin: 0 2em 0 0;
 }
@@ -96,11 +101,11 @@ iframe {
 }
 
 
-.inside-text{
+.inside-text {
     white-space: nowrap;
     text-overflow: clip;
     overflow: hidden;
-  }
+}
 
 .minimize {
     padding-left: 1em;
@@ -125,27 +130,27 @@ iframe {
 @font-face {
     font-family: ChicagoOld;
     src: url(../pixChicago.woff);
-  }
+}
 
 
 
-  /* width */
-  ::-webkit-scrollbar {
+/* width */
+::-webkit-scrollbar {
     width: 15px;
     height: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #ffffff;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(54, 54, 54,0.5);
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(54, 54, 54, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 99, 99, 0.5);
-  }
+}

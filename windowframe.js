@@ -37,11 +37,11 @@ function windowframe(x, y, height, width) {
     this.windowheight = height;
     this.windowwidth = width;
     this.currentid = id;
-    this.windowHTML = function() {
+    this.windowHTML = function () {
         var a = document.createElement('div');
         a.setAttribute('class',
             'windowframe draggable'
-            ); //mettre draggable ou enelever pour déboguer le coin
+        ); //mettre draggable ou enelever pour déboguer le coin
         a.setAttribute('style', 'left:' + x + ';top:' + y + ';z-index:' +
             z + ';width:' + height + 'vw;height:' + width + 'vh;');
         return a;
@@ -94,7 +94,7 @@ function addwindowframe(content, title) {
 
     const cID = document.getElementById(b.id);
     // special function to make sure the windowframe that's clicked is on top of the others. the z increment is also repeated at the end of the whole addwindowframe function. 
-    b.addEventListener("mousedown", function() {
+    b.addEventListener("mousedown", function () {
         cID.style.zIndex = z;
         z++;
     });
@@ -106,62 +106,63 @@ function addwindowframe(content, title) {
     const currentwindow = document.getElementById(b.id);
 
     // listener on the windowframe object to close the start menu when selected
-    currentwindow.addEventListener("click", function() {
+    currentwindow.addEventListener("click", function () {
         closeStart();
     })
 
     // 'Kill' or close button
-    currentK.addEventListener("click", function() {
+    currentK.addEventListener("click", function () {
         document.body.removeChild(b);
     });
 
     // Fullscreen (can still be dragged)
-    currentfs.addEventListener("click", function() {
+    currentfs.addEventListener("click", function () {
         b.style.width = "100vw";
         b.style.height = "calc(100vh - 60px)";
         b.style.top = "0";
         b.style.left = "0";
-        
+
     });
 
 
     // Minimize function
-    currentmin.addEventListener("click", function() {
+    currentmin.addEventListener("click", function () {
 
         // This part hides the windowframe
         b.style.display = "none";
 
-        // This part takes the first 12 characters of the windowframe's title
-        let y = title + "";
-        let z = "";
-        for (let i = 0; i < 12; i++) {
-            z += y.charAt(i);
-        }
+        // ***This part has been replaced by a simpler css text-overflow with ellipsis
+        // // Takes the first 12 characters of the windowframe's title
+        // let y = title + "";
+        // let z = "";
+        // for (let i = 0; i < 12; i++) {
+        //     z += y.charAt(i);
+        // }
 
         // this part creates the button in the bottom frame
         let x = document.createElement("button");
         x.className = "bttm-icon";
         x.id = "bttm-icon" + newframe.currentid;
-        x.innerHTML = z;
+        x.innerHTML = title;
 
         // clicking the bottom button makes sur the start menu closes
-        x.addEventListener("click", function() {
+        x.addEventListener("click", function () {
             closeStart();
         })
 
         // clicking the bottom button also brings back the windowframe and deletes the bottom button
         x.addEventListener("click",
-            function() {
+            function () {
                 b.style.display = "block";
                 z++;
                 b.style.zIndex = z;
-                
+
 
                 document.getElementById("bottom-bar").removeChild(
                     x);
             })
 
-    // add the button at the bottom 
+        // add the button at the bottom 
         document.getElementById("bottom-bar").appendChild(x);
     });
 
@@ -175,29 +176,24 @@ function addwindowframe(content, title) {
 
 
 // Special Function to add an infinite amount of windowframes with a randomization of color inside. 
-    // For an unknown reason, the windowframes start to break after a while. Maybe over a certain z-Index ? Needs to be verified eventually.
+// For an unknown reason, the windowframes start to break after a while. Maybe over a certain z-Index ? Needs to be verified eventually.
 
-    var uhoh;
-    function UhOh() {
-    
-    uhoh = setInterval(function oops(){
-        addwindowframe('../randomcolor.html','Uh-Oh!')}, 300);
+var uhoh;
+
+function UhOh() {
+
+    uhoh = setInterval(function oops() {
+        addwindowframe('../randomcolor.html', 'Uh-Oh!')
+    }, 300);
 }
 
 // function to stop the UhOh function.
-    function stop(){
-        clearInterval(uhoh);    
-    }
-  
-    function killAll(){
-        stop();
-        $(".windowframe").remove();
-        
-    }
+function stop() {
+    clearInterval(uhoh);
+}
 
-  
-
-
- 
-      
-  
+function killAll() {
+    stop();
+    $(".windowframe").remove();
+    $(".bttm-icon").remove();
+}

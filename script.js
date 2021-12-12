@@ -1,9 +1,12 @@
 // SCRIPTS
 // 
 
+
+
+
 // Loading screen (it'S an mp4 with a fadeOut)
 
-setTimeout(function() {
+setTimeout(function () {
   $("#start-screen").fadeOut();
 }, 3000)
 
@@ -14,9 +17,9 @@ function toggleIcon(id, activeClasses, inactiveClasses) {
   const icon = document.getElementById(id);
   let classes = icon.className;
   if (classes !== activeClasses) {
-      icon.className = activeClasses;
+    icon.className = activeClasses;
   } else {
-      icon.className = inactiveClasses;
+    icon.className = inactiveClasses;
   }
 }
 
@@ -31,9 +34,9 @@ function closeStart() {
 function openStart() {
   const menustyle = document.getElementById("start-box").style;
   if (menustyle.display !== "none") {
-      menustyle.display = "none";
+    menustyle.display = "none";
   } else {
-      menustyle.display = "block";
+    menustyle.display = "block";
   }
 }
 
@@ -41,25 +44,34 @@ function openStart() {
 function logOff() {
   const logoffstyle = document.getElementById("log-off").style;
   if (logoffstyle.opacity !== "1") {
-      logoffstyle.zIndex = 999;
-      logoffstyle.opacity = '1';
+    logoffstyle.zIndex = 999;
+    logoffstyle.opacity = '1';
   }
-  document.getElementById("mitsub").addEventListener("mousedown", function() {
-    document.getElementById("smiley") = '<i class="far fa-surprise"></i>';
-  })
+
 }
+
+function logOn() {
+  const logoffstyle = document.getElementById("log-off").style;
+  if (logoffstyle.opacity === "1") {
+    logoffstyle.zIndex = -999;
+    logoffstyle.opacity = '0';
+  }
+
+}
+
 
 
 var cmptsml = 0;
 
 function oops() {
 
+
   // construct array of icons, all the same except two
   let newicon = new Array('<i class="far fa-dizzy"></i>',
-      '<i class="far fa-dizzy"></i>', '<i class="far fa-dizzy"></i>',
-      '<i class="far fa-dizzy"></i>', '<i class="far fa-dizzy"></i>',
-      '<i class="far fa-dizzy"></i>', '<i class="far fa-grin-tears"></i>',
-      '<i class="fas fa-virus"></i>');
+    '<i class="far fa-dizzy"></i>', '<i class="far fa-dizzy"></i>',
+    '<i class="far fa-dizzy"></i>', '<i class="far fa-dizzy"></i>',
+    '<i class="far fa-dizzy"></i>', '<i class="far fa-grin-tears"></i>',
+    '<i class="fas fa-virus"></i>');
 
   const logoff = document.getElementById('log-off-text');
   const smile = document.getElementById("smiley");
@@ -67,13 +79,20 @@ function oops() {
   logoff.style.display = 'block';
 
   // MAkes sure the first icon is always the regular icon 'fa-dizzy'
-  if (cmptsml === 0) {
-      smile.innerHTML = '<i class="far fa-dizzy"></i>';
-  } else {
-      smile.innerHTML = newicon[Math.floor(Math.random() * newicon.length)];
-  }
+
 
   cmptsml++;
+
+
+  if (cmptsml === 0) {
+    smile.innerHTML = '<i class="far fa-dizzy"></i>';
+  } else {
+    smile.innerHTML = newicon[Math.floor(Math.random() * newicon.length)];
+  }
+
+
+
+
 }
 
 
@@ -94,28 +113,60 @@ function powerOff() {
 
   // animation
   $("main").animate({
-      left: "50%",
-      top: "50%",
-      height: "4px",
-      width: "4px",
-      opacity: 0.35
-  },'fast').animate({opacity:0},4000);
-  
+    left: "50%",
+    top: "50%",
+    height: "4px",
+    width: "4px",
+    opacity: 0.35
+  }, 'fast').animate({
+    opacity: 0
+  }, 4000);
+
   // remove the inside of the body 5s after the animation
-  setTimeout(function removeMain(){$("main").remove();$("div").remove();} , 5000 )
-     
+  setTimeout(function removeMain() {
+    $("main").remove();
+    $("div").remove();
+  }, 5000)
+
 
 }
 
 // 
-function changeHTML(id, content){
+function changeHTML(id, content) {
   $(id).html(content);
+}
+
+// 
+function beermode() {
+  var img = "../video/beer.mp4";
+
+  $("body").append("<video style='display:none;' id='beervid' autoplay muted loop src=" + img + ">");
+  $("#beervid").fadeIn();
+  setTimeout(function () {
+    $("#beervid").fadeOut();
+  }, 4000);
+  setTimeout(function () {
+    $("#beervid").remove();
+  }, 6000);
+
 }
 
 
 
-    
+var initSign = false;
 
-
-
-
+function sign() {
+  if (!initSign) {
+    $("body").css({
+      "font-family": "wingdings",
+      "font-size": "0.8rem"
+    });
+    initSign = true;
+  } else {
+    $("body").css({
+      "font-family": "ChicagoOld",
+      "font-size": "0.75rem"
+    });
+    initSign = false;
+  }
+}

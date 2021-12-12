@@ -5,19 +5,17 @@
     <meta charset="utf-8">
     <title>C: drive</title>
     <link rel="stylesheet" href="C.css">
-    
+
     <script src="../windowframe.js"></script>
     <script src="../script.js"></script>
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/83483ef559.js"
-crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
 
-<!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
-<link rel="stylesheet"
-href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 </head>
 
 
@@ -26,32 +24,35 @@ href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <main>
         <div id="grid-C">
             <!-- 16x16 grid-table -->
-        <table>
-            <tr>
-                <td ondblclick="alert('Access Denied. Sooooorry!')" id="icon1"><i class="fas fa-folder"></i><br>System Files</td>
-                <td ondblclick="UhOh();" id="icon2"><i class="fas fa-folder"></i><br>My Documents *DO NOT CLICK*</td>
-                <td ondblclick="addwindowframe('../trash.html','RECYCLE BIN (unfortunately, this is still the trash)')" id="icon3"><i class="fas fa-folder"></i><br>@RECYCLE</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td ondblclick="alert('Access Denied. Sooooorry!')" id="icon1"><i
+                            class="fas fa-folder"></i><br>System Files</td>
+                    <td ondblclick="UhOh();" id="icon2"><i class="fas fa-folder"></i><br>My Documents *DO NOT CLICK*
+                    </td>
+                    <td ondblclick="addwindowframe('../trash.html','RECYCLE BIN (unfortunately, this is still the trash)')"
+                        id="icon3"><i class="fas fa-folder"></i><br>@RECYCLE</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </main>
 </body>
@@ -61,4 +62,5 @@ href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     $("#icon2").draggable();
     $("#icon3").draggable();
 </script>
+
 </html>

@@ -3,25 +3,22 @@
 
 <head>
 
-  <!-- METADATA -->
+    <!-- METADATA -->
     <meta charset="utf-8">
     <meta property="og:title" content="Web Art Museum" />
     <meta property="og:type" content="website" />
-    <meta property="og:url"
-        content="hybrid.concordia.ca/max_go/final/index.html" />
+    <meta property="og:url" content="hybrid.concordia.ca/max_go/final/index.html" />
 
     <title>Web Art Museum</title>
 
-<!-- Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    
-<!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/83483ef559.js"
-        crossorigin="anonymous"></script>
 
-        <!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
-    <link rel="stylesheet"
-        href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
+
+    <!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
@@ -30,30 +27,31 @@
     <script src="script.js"></script>
 
 
-      <!-- Custom script : Array for the folders. Left in HTML for better control -->
-      <!-- folder[0] for the website, folder[1] for the displayed name -->
+    <!-- Custom script : Array for the folders. Left in HTML for better control -->
+    <!-- folder[0] for the website, folder[1] for the displayed name -->
     <script>
         var folder = new Array();
         folder[0] = new Array("https://en.wikipedia.org/wiki/Net.art",
-            "Net.Art");
+            "Wikipedia&nbsp;-&nbsp;Net.Art");
         folder[1] = new Array("https://wwwwwwwww.jodi.org", "JODI.org");
         folder[2] = new Array(
             "https://pbs.twimg.com/media/E40LfdzX0AcV7TI?format=jpg&name=small",
             "Allez&nbsp;!");
-        folder[3] = new Array("img/place-indexed.png", "r/place")
-        folder[4] = new Array("hackers.html","Hackers&nbsp;!")
-        folder[5] = new Array("https://0100101110101101.org/biennale-py/","biennale.py")
-        folder[6] = new Array("https://cultdeadcow.com/","Moooooooooooo!")
-        folder[7] = new Array("http://www.intotime.com/", "Into time&nbsp;-&nbsp;Rafael&nbsp;Rozendaal")
-        folder[8] = new Array("http://www.stagnationmeansdecline.com/","stagnationmeansdecline.com&nbsp;-&nbsp;Rafael&nbsp;Rozendaal,&nbsp;2002")
-        folder[9] = new Array("","")
-        folder[10] = new Array("","")
-        folder[11] = new Array("", "")
-        folder[12] = new Array("","")
-        folder[13] = new Array("","")
-        folder[14] = new Array("","")
-        folder[15] = new Array("","")
-        
+        folder[3] = new Array("img/place-indexed.png", "r/place");
+        folder[4] = new Array("hackers.html", "Hackers&nbsp;!");
+        folder[5] = new Array("https://0100101110101101.org/biennale-py/", "biennale.py");
+        folder[6] = new Array("https://cultdeadcow.com/", "Moooooooooooo!");
+        folder[7] = new Array("https://www.blankwindows.com/",
+            "blank&nbsp;windows&nbsp;.com&nbsp;-&nbsp;Rafael&nbsp;Rozendaal");
+        folder[8] = new Array("https://artbase.rhizome.org/wiki/Main_Page", "Rhizome&nbsp;/&nbsp;Artbase");
+        folder[9] = new Array("https://www.eggalone.com/", "Egg&nbsp;Alone&nbsp;-&nbsp;Rafael&nbsp;Rozendaal");
+        folder[10] = new Array("https://monoskop.org/RTMark", "RTMark");
+        folder[11] = new Array("https://conifer.rhizome.org/", "Conifer");
+        // folder[12] = new Array("","");
+        // folder[13] = new Array("","");
+        // folder[14] = new Array("","");
+        // folder[15] = new Array("","");
+
 
         function selectWebpage() {
             let rand = Math.floor(Math.random() * folder.length);
@@ -68,63 +66,66 @@
 
 
 <body>
-  <!-- Splash screen (loading...) -->
+    <!-- Splash screen (loading...) -->
     <div id="start-screen">
         <div><video src="video/splash.mp4" autoplay muted></div>
     </div>
 
     <main>
-
-      <!-- Central container with icons -->
+        <div style="position:fixed;width:1px;height:100vh;right:0px;z-index:999;" onclick="killAll()"></div>
+        <!-- Central container with icons -->
         <div onclick="if(document.getElementById('start-box').style.display === 'block')openStart();"
             id="menu-overlay-gauche">
 
             <!-- WARNING : Inverted order -->
 
             <!-- Trash -->
-            <div id="trash" class="icon draggable"
-                ondblclick='addwindowframe("trash.html", "The Dump")'>
+            <div id="trash" class="icon draggable" ondblclick='addwindowframe("trash.html", "The&nbsp;Dump")'>
                 <i id="icon3" class="fas fa-dumpster"></i><span class="undericon">Trash</span>
             </div>
 
             <!-- Random Folder -->
-            <div class="icon draggable"
-            ondblclick='let temp = selectWebpage();addwindowframe(temp[0], temp[1])'>
-            <i class="fas fa-folder"></i><span class="undericon">RANDOM</span>
-        </div>
+            <div class="icon draggable" ondblclick='let temp = selectWebpage();addwindowframe(temp[0], temp[1])'>
+                <i class="fas fa-folder"></i><span class="undericon">RANDOM</span>
+            </div>
 
-        <!-- Random Webpage -->
-        <div class="icon draggable"
-        ondblclick="addwindowframe('folders/archives.html','My Archives. (Take Care of Them)')">
-        <i class="fas fa-archive"></i><span class="undericon">Archives</span>
-</div>
-<!-- Random Webpage -->
-<div class="icon draggable"
-                ondblclick="addwindowframe('folders/C.html','C: drive')">
+            <!-- Random Webpage -->
+            <div class="icon draggable"
+                ondblclick="addwindowframe('folders/archives.html','My&nbsp;Archives.&nbsp;(Take&nbsp;Care&nbsp;of&nbsp;Them)')">
+                <i class="fas fa-archive"></i><span class="undericon">Archives</span>
+            </div>
+            <!-- Random Webpage -->
+            <div class="icon draggable" ondblclick="addwindowframe('folders/C.html','C:&nbsp;drive')">
                 <i class="fas fa-hdd"></i><span class="undericon">C: Drive</span>
             </div>
 
-<!-- Mailbox -->
-<div class="icon draggable"
-                ondblclick='addwindowframe("mailbox.html", "Your mailbox")'>
+            <!-- Mailbox -->
+            <!-- Email read status initialization at page load -->
+            <script>
+
+            </script>
+            <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Mailbox")'>
                 <i id="icon1" class="fas fa-envelope"></i><span class="undericon">Mailbox</span>
             </div>
         </div>
 
-<!-- START MENU -->
+        <!-- START MENU -->
         <div id="start-box" style="display:none;">
             <div class="start-header">Start Menu</div>
             <div class="start-content">
                 <ul>
 
-<!-- C: drive to access system files. No permission allowed. -->
-                    <li onclick="addwindowframe('folders/C.html','C: drive');openStart()">C: drive</li>
+                    <!-- C: drive to access system files. No permission allowed. -->
+                    <li onclick="addwindowframe('folders/C.html','C:&nbsp;drive');openStart()">C: drive</li>
 
-<!-- D: drive is corrupted. -->
-                    <li onclick="addwindowframe('folders/D.html','|/$%/??(O&%?&*)&data.encrypted(*?&');openStart()">D: drive</li>
+                    <!-- D: drive is corrupted. -->
+                    <li onclick="addwindowframe('folders/D.html','|/$%/??(O&%?&*)&data.encrypted(*?&');openStart()">D:
+                        drive</li>
 
-<!-- The actual content, sparated in folders. -->
-                    <li onclick="addwindowframe('folders/archives.html','My Archives. (Take Care of Them)');openStart()">Archives</li>
+                    <!-- The actual content, sparated in folders. -->
+                    <li
+                        onclick="addwindowframe('folders/archives.html','My Archives.&nbsp;(Take Care of Them)');openStart()">
+                        Archives</li>
 
                     <!-- Lock the user on a lockscreen without a password to log on. Forgot your password ? That's too bad ;) Go play outside! -->
                     <li onclick="logOff();openStart()">Log Off</li>
@@ -151,8 +152,8 @@
 
             <div style="display:flex;">
                 <label for="password">Your password&nbsp;:&nbsp;</label>
-                <input type="password" id="pw" name="password">
-                <button id="mitsub" onclick="oops()">&nbsp;>>&nbsp;</button>
+                <input type="password" id="pw" name="password" value="">
+                <button id="mitsub">&nbsp;>>&nbsp;</button>
             </div>
 
         </div>
@@ -160,9 +161,20 @@
 
         <!-- FIN -->
     </main>
-<script>
-    $(".draggable").draggable();
-</script>
+
+    <!-- Coucou, le password est ici :) -->
+    <script>
+        $("#mitsub").click(function () {
+            var value = $("#pw").val();
+            if (value === "!net.Art:)") {
+                logOn();
+            } else {
+                oops();
+            }
+        })
+
+        $(".draggable").draggable();
+    </script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ main {
     background-image: url("img/quickbg2.png");
     background-size: cover;
     font-family: ChicagoOld;
-    font-size:12px;
+    font-size: 12px;
 }
 
 /* Messed up container -  do not touch */
@@ -43,11 +43,12 @@ main {
 }
 
 
-.undericon{
-    font-size:1rem;
-    
+.undericon {
+    font-size: 1rem;
+
     letter-spacing: 1px;
 }
+
 /* 
 #trash {
     bottom: 0;
@@ -61,6 +62,7 @@ main {
 .wholeframe {
     position: relative;
 }
+
 .windowframe {
     background-color: white;
     border: 1px black solid;
@@ -78,6 +80,7 @@ main {
     padding: 10px 1em 0;
     display: flex;
 }
+
 .topframe:hover {
     cursor: move;
 }
@@ -92,11 +95,11 @@ main {
 }
 
 
-.inside-text{
+.inside-text {
     white-space: nowrap;
     text-overflow: clip;
     overflow: hidden;
-  }
+}
 
 .minimize {
     padding-left: 1em;
@@ -198,6 +201,7 @@ iframe {
     background-color: #0e0e0e;
     color: whitesmoke;
 }
+
 .start-content ul>li:active {
     background-color: #4d4d4d;
     color: antiquewhite;
@@ -319,45 +323,45 @@ iframe {
 @font-face {
     font-family: ChicagoOld;
     src: url(pixChicago.woff);
-  }
+}
 
 
 
 /* Scrollbar style */
 
-  /* width */
-  ::-webkit-scrollbar {
+/* width */
+::-webkit-scrollbar {
     width: 15px;
     height: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #ffffff;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(54, 54, 54,0.5);
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(54, 54, 54, 0.5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 99, 99, 0.5);
-  }
+}
 
-  #mitsub{
-      background-color: rgba(54, 54, 54,0.5);
-      color:white;
-      margin: 0 1em;
-      font-size:2rem;
-      padding-left:0.15rem;
-  }
+#mitsub {
+    background-color: rgba(54, 54, 54, 0.5);
+    color: white;
+    margin: 0 1em;
+    font-size: 2rem;
+    padding-left: 0.15rem;
+}
 
 
 
-  .icon:active{
-    background-color:white;
+.icon:active {
+    background-color: white;
     color: black;
-    
-  }
+
+}

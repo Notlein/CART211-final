@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Mailbox</title>
     <link rel="stylesheet" href="mailbox.css">
+    <link rel="text" href="../index.html">
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
@@ -15,7 +16,7 @@
     emails[1] = 'contenu du courriel 2';
     emails[2] = 'contenu du courriel 3';
     emails[3] = 'contenu du courriel 4';
-    emails[4] = '<video autoplay muted loop width=\'100%\' height=\'100%\' src=\'video/apple.mp4\'>';
+    emails[4] = '<img autoplay muted loop width=\'100%\' src=\'img/apple-d.gif\'>';
 </script>
 
 <body>
@@ -24,20 +25,37 @@
         <div class="container">
             <div class="left">
                 <ul>
-                    <li onclick="changeHTML('#email',emails[0])">Welcome bud!</li>
-                    <li onclick="changeHTML('#email',emails[1])">Fwd: Re: Early Net.Art</li>
-                    <li onclick="changeHTML('#email',emails[2])">Fwd: Communities</li>
-                    <li onclick="changeHTML('#email',emails[3])">Fwd: Fwd: Fwd: r/place</li>
-                    <li onclick="changeHTML('#email',emails[4])">**SPAM** Very nsfw. omg O_O</li>
+                    <li id="email1" class="email-class"
+                        onclick="changeHTML('#email',emails[0]);setTimeout(function(){$('#email2').show()},5000);localStorage.setItem('read1', true);">
+                        Welcome bud!</li>
+                    <li id="email2" class="email-class"
+                        onclick="changeHTML('#email',emails[1]);setTimeout(function(){$('#email3').show()},13000);localStorage.setItem('read2', true);">
+                        Fwd: Re: Early Net.Art</li>
+                    <li id="email3" class="email-class"
+                        onclick="changeHTML('#email',emails[2]);setTimeout(function(){$('#email4').show()},8000);localStorage.setItem('read3', true);">
+                        Fwd: Communities</li>
+                    <li id="email4" class="email-class"
+                        onclick="changeHTML('#email',emails[3]);setTimeout(function(){$('#email5').show()},20000);localStorage.setItem('read4', true);">
+                        Fwd: Fwd: Fwd: r/place</li>
+                    <li id="email5" class="email-class"
+                        onclick="changeHTML('#email',emails[4]);localStorage.setItem('read5', true);">**SPAM** Very
+                        nsfw. omg O_O</li>
                 </ul>
 
             </div>
             <div class="right">
-                <div id="email">contenu des courriels ici</div>
+                <div id="email">content here</div>
             </div>
         </div>
     </div>
 
+
+    <script>
+        if (!localStorage.getItem("read1")) $("#email2").hide();
+        if (!localStorage.getItem("read2")) $("#email3").hide();
+        if (!localStorage.getItem("read3")) $("#email4").hide();
+        if (!localStorage.getItem("read4")) $("#email5").hide();
+    </script>
 </body>
 
 </html>

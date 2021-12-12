@@ -5,19 +5,17 @@
     <meta charset="utf-8">
     <title>Archives</title>
     <link rel="stylesheet" href="archives.css">
-    
+
     <script src="../windowframe.js"></script>
     <script src="../script.js"></script>
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/83483ef559.js"
-crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
 
-<!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
-<link rel="stylesheet"
-href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- JQUERY library 3.6 with UI controls (draggable, resizable) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 </head>
 
 
@@ -26,38 +24,47 @@ href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <main>
         <div id="grid-C">
             <!-- 16x16 grid-table -->
-        <table>
-            <tr>
-                <td ondblclick="window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early Internet Art</td>
-                <td ondblclick="window.location = 'communities.html';" id="icon2"><i class="fas fa-folder"></i><br>Proliferation and communities</td>
-                <td ondblclick="window.location = 'socialmedia.html';" id="icon3"><i class="fas fa-folder"></i><br>Social media and organic interactions of net.art</td>
-                <td></td>
-            </tr>
-            <tr id="row2">
-                <td ondblclick="window.location = '../ee.html';" id="icon4"><i class="fab fa-500px"></i><br>ea</td>
-                <td ondblclick="window.location = '../ee.html';" id="icon5"><i class="fas fa-american-sign-language-interpreting"></i><br>st</td>
-                <td></td>
-                <td ondblclick="window.location = '../ee.html';" id="icon6"><i class="fas fa-allergies"></i><br>er</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td ondblclick="window.location = '../ee.html';" id="icon7"><i class="fas fa-apple-alt"></i><br>eg</td>
-                <td ondblclick="window.location = '../ee.html';" id="icon8"><i class="fas fa-barcode"></i><br>gs</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td ondblclick="window.location = '../ee.html';" id="icon9"><i class="fas fa-beer"></i><br>he</td>
-                <td ondblclick="window.location = '../ee.html';" id="icon10"><i class="fas fa-pastafarianism"></i><br>re</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td ondblclick="window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early
+                        Internet Art</td>
+                    <td ondblclick="window.location = 'communities.html';" id="icon2"><i
+                            class="fas fa-folder"></i><br>Proliferation and communities</td>
+                    <td ondblclick="window.location = 'socialmedia.html';" id="icon3"><i
+                            class="fas fa-folder"></i><br>Social media and organic interactions of net.art</td>
+                    <td ondblclick="window.location = 'reject.html';" id="icon11"><i
+                            class="fas fa-folder"></i><br>Rejected Art</td>
+                </tr>
+                <tr id="row2">
+                    <td ondblclick="window.location = '../ee.html';" id="icon4"><i class="fab fa-500px"></i><br>ea</td>
+                    <td ondblclick="sign()" id="icon5"><i class="fas fa-american-sign-language-interpreting"></i><br>st
+                    </td>
+                    <td></td>
+                    <td ondblclick="window.location = '../ee.html';" id="icon6"><i class="fas fa-allergies"></i><br>er
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td ondblclick="window.location = '../ee.html';" id="icon7"><i class="fas fa-apple-alt"></i><br>eg
+                    </td>
+                    <td ondblclick="window.location = 'https://monoskop.org/RTMark';" id="icon8"><i
+                            class="fas fa-barcode"></i><br>gs</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td ondblclick="beermode()" id="icon9"><i class="fas fa-beer"></i><br>he</td>
+                    <td ondblclick="window.location = '../ee.html';" id="icon10"><i
+                            class="fas fa-pastafarianism"></i><br>re</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </main>
 </body>
 
 <script>
     $("td").draggable();
-
 </script>
+
 </html>
