@@ -1,0 +1,23 @@
+r/place
+
+The western internet world has been greatly influenced by the website Reddit.com since it’s creation in 2005. 
+On April 1st 2017, administrators of the website created a social experiment exploring the importance of the 
+individual and collaborative efforts in order to achieve complex creations. Place was organized as a 1000x1000 
+pixel canvas on which any user could add a single pixel of color every 20 to 5 minutes. The Reddit hosted site 
+lasted for 72 hours and featured anything from pop culture to video games, politics and social issues. Over one 
+million users interacted with the website and the experiment is considered for its representation of the culture 
+of Reddit’s online communities and the Internet as a whole.
+
+Ars Technica writer cited: “the cooperative spirit of Place represented a model for fighting 
+extremism in internet communities.”[1]
+
+Among the notable events, one that hits particularly close to home has been titled: “The battle of Québec”.
+The members of the reddit community r/quebec had to fight the expansion of the Canadian flag onto their own.
+Reminiscing of the English conquest over the French colonies of North America, the final canvas of Place features 
+Quebec’s patriotic flag as well as the date 1837, year of the Lower Canada Rebellion, the Patriot's war.
+
+Sources:
+https://www.reddit.com/r/place/
+https://www.redditinc.com/blog/how-we-built-rplace/
+
+[1] Machkovech, Sam. "Did Reddit's April Fool's gag solve the issue of online hate speech?". Ars Technica. Retrieved 4 April 2017. https://arstechnica.com/gaming/2017/04/in-memoriam-reddits-72-hour-live-graffiti-wall-as-a-social-experiment/

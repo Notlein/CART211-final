@@ -47,7 +47,7 @@ ul>li {
   border: 1px solid grey;
   padding: 1.9em;
   cursor: default;
-  background-color: rgb(197, 243, 255);
+  background-color: rgb(210, 245, 255);
 
 }
 
@@ -58,7 +58,7 @@ ul>li:hover {
 
 .right {
   margin: 0.5em;
-  width: 65%;
+  width: 60%;
   height: calc(100vh - 70px);
   background-color: white;
   border: 1px grey solid;
@@ -69,10 +69,12 @@ ul>li:hover {
 
 #email {
   position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: auto;
-
+    width: calc(100% - 60px);
+    height: auto;
+    overflow: auto;
+    padding-left: 30px;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
 }
 
 /* width */
@@ -101,4 +103,14 @@ ul>li:hover {
 @font-face {
   font-family: ChicagoOld;
   src: url(pixChicago.woff);
+}
+
+#paperclip{
+  font-size:3em;margin:0.25em 1em
+
+}
+
+#pc:active{
+  background-color: black;
+  color:white;
 }

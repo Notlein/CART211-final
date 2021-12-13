@@ -325,6 +325,10 @@ iframe {
     src: url(pixChicago.woff);
 }
 
+@font-face {
+    font-family: Louis;
+    src: url(Louis_George_Cafe_Bold.ttf);
+}
 
 
 /* Scrollbar style */

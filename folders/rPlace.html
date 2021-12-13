@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Early</title>
-    <link rel="stylesheet" href="archives.css">
+    <title>r/Place</title>
+    <link rel="stylesheet" href="C.css">
 
     <script src="../windowframe.js"></script>
     <script src="../script.js"></script>
@@ -22,14 +22,14 @@
 
 <body>
     <main>
-        <a href="archives.html">&lt;&lt;&lt;</a>
+        <a href="modern.html">&lt;&lt;&lt;</a>
         <div id="grid-C">
             <!-- 16x16 grid-table -->
             <table>
                 <tr>
-                    <td ondblclick="" id="icon1">ea</td>
-                    <td ondblclick="" id="icon2">r</td>
-                    <td ondblclick="" id="icon3">ly</td>
+                    <td class="drag" ondblclick="addwindowframe('../txt/rPlace.txt','Read Me !')"><i style="font-size:3em" class="far fa-file-alt"></i><br>r/Place.txt</td>
+                    <td class="drag" ondblclick="addwindowframe('../img/rPlacex.png','Pictures')"><i style="font-size:3em" class="fas fa-file-image"></i><br>The 1000x1000 canvas</td>
+                    <td class="drag" ondblclick="addwindowframe('https://rolandr.github.io/','r/Place')"><i style="font-size:3em" class="fas fa-globe"></i><br>Interactive Atlas</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -56,9 +56,8 @@
 </body>
 
 <script>
-    $("#icon1").draggable();
-    $("#icon2").draggable();
-    $("#icon3").draggable();
+   $("td").draggable();
+    
 </script>
 
 </html>

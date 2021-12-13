@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Social media</title>
+    <title>Modern</title>
     <link rel="stylesheet" href="archives.css">
 
     <script src="../windowframe.js"></script>
@@ -27,9 +27,9 @@
             <!-- 16x16 grid-table -->
             <table>
                 <tr>
-                    <td ondblclick="" id="icon1">soci</td>
-                    <td ondblclick="" id="icon2">alme</td>
-                    <td ondblclick="" id="icon3">dia</td>
+                    <td class="drag" ondblclick="window.location = 'RafaelRozendaal.html';" id="icon1"><i style="font-size:3em" class="far fa-folder"></i><br>Rafael Rozendaal</td>
+                    <td class="drag" ondblclick="window.location = 'LifePath.html';" id="icon2"><i style="font-size:3em" class="far fa-folder"></i><br>Lifepatch</td>
+                    <td class="drag" ondblclick="window.location = 'rPlace.html';" id="icon3"><i style="font-size:3em" class="far fa-folder"></i><br>r/Place</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -56,9 +56,8 @@
 </body>
 
 <script>
-    $("#icon1").draggable();
-    $("#icon2").draggable();
-    $("#icon3").draggable();
+    $("td").draggable();
+    
 </script>
 
 </html>

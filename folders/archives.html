@@ -26,37 +26,70 @@
             <!-- 16x16 grid-table -->
             <table>
                 <tr>
-                    <td ondblclick="window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early
+                    <!-- <td ondblclick="localStorage.setItem('read2', true);window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early
                         Internet Art</td>
-                    <td ondblclick="window.location = 'communities.html';" id="icon2"><i
-                            class="fas fa-folder"></i><br>Proliferation and communities</td>
-                    <td ondblclick="window.location = 'socialmedia.html';" id="icon3"><i
-                            class="fas fa-folder"></i><br>Social media and organic interactions of net.art</td>
-                    <td ondblclick="window.location = 'reject.html';" id="icon11"><i
+                    <td ondblclick="localStorage.setItem('read3', true);window.location = 'communities.html';" id="icon2"><i
+                            class="fas fa-folder"></i><br>Proliferation and communities</td> -->
+
+                            <td style="top:15px" class="drag" ondblclick="window.location = 'rTMark.html';localStorage.setItem('netartaccess', true);" id="icon1"><i class="fas fa-folder"></i><br>rTMark</td>
+
+                    <td></td>
+
+
+                    <td class="drag" ondblclick="window.location = 'jennicam.html';localStorage.setItem('netartaccess2', true)"; id="icon3"><i
+                            class="fas fa-folder"></i><br>Jennicam</td>
+                    <td class="drag"></td>
+                            <td></td>
+                </tr>
+                <tr>
+                    <!-- <td ondblclick="localStorage.setItem('read2', true);window.location = 'early.html';" id="icon1"><i class="fas fa-folder"></i><br>Early
+                        Internet Art</td>
+                    <td ondblclick="localStorage.setItem('read3', true);window.location = 'communities.html';" id="icon2"><i
+                            class="fas fa-folder"></i><br>Proliferation and communities</td> -->
+
+                            <td></td>
+
+                    <td class="drag" ondblclick="window.location = '0100101110101101org.html';localStorage.setItem('netartaccess', true);" id="icon12"><i
+                            class="fas fa-folder"></i><br>0100101110101101org</td>
+
+
+                    <td class="drag" ondblclick="window.location = 'TheWorldsFirstCollaborativeSentence.html';localStorage.setItem('netartaccess', true);"; id="icon13"><i
+                            class="fas fa-folder"></i><br>TheWorldsFirstCollaborativeSentence</td>
+                    <td class="drag" ondblclick="window.location = 'reject.html';" id="icon21"><i
                             class="fas fa-folder"></i><br>Rejected Art</td>
+                            <td class="drag" ondblclick="window.location = 'jodi.html';localStorage.setItem('netartaccess2', true);" id="icon22"><i
+                                class="fas fa-folder"></i><br>JODI</td>
                 </tr>
                 <tr id="row2">
-                    <td ondblclick="window.location = '../ee.html';" id="icon4"><i class="fab fa-500px"></i><br>ea</td>
-                    <td ondblclick="sign()" id="icon5"><i class="fas fa-american-sign-language-interpreting"></i><br>st
+                    <!--  -->
+                    <td></td>
+                    <td class="drag" ondblclick="sign()" id="icon5"><i class="fas fa-american-sign-language-interpreting"></i><br>ea
                     </td>
                     <td></td>
-                    <td ondblclick="window.location = '../ee.html';" id="icon6"><i class="fas fa-allergies"></i><br>er
+                    <!--  -->
+                    <td class="drag" ondblclick="$('body').css({'background-color':'black','color':'white'});" id="icon6"><i class="fas fa-allergies"></i><br>st
                     </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td ondblclick="window.location = '../ee.html';" id="icon7"><i class="fas fa-apple-alt"></i><br>eg
+                    <!--  -->
+                    <td class="drag" ondblclick="$('#icon7').html('<i style=\'color:yellow;filter:brightness(0.9)\' class=\'fas fa-lemon\'></i><br>er')" id="icon7"><i class="fas fa-apple-alt"></i><br>er
                     </td>
-                    <td ondblclick="window.location = 'https://monoskop.org/RTMark';" id="icon8"><i
-                            class="fas fa-barcode"></i><br>gs</td>
+                    <td class="drag" ondblclick="addwindowframe('https://monoskop.org/RTMark','On RTMark (Monoskop)');" id="icon8"><i
+                            class="fas fa-barcode"></i><br>eg</td>
                     <td></td>
+                    <td style="opacity:0.5" class="drag" id="modern"><i
+                        class="fas fa-folder"></i><br>Modern</td>
                 </tr>
                 <tr>
-                    <td ondblclick="beermode()" id="icon9"><i class="fas fa-beer"></i><br>he</td>
-                    <td ondblclick="window.location = '../ee.html';" id="icon10"><i
-                            class="fas fa-pastafarianism"></i><br>re</td>
+                    <td class="drag" ondblclick="beermode()" id="icon9"><i class="fas fa-beer"></i><br>gs</td>
+                    <!--  -->
+                    <td class="drag" ondblclick="$('#icon10').animate({'font-size':'5em','background-color':'red','color':'yellow'})" id="icon10"><i
+                            class="fas fa-pastafarianism"></i><br>!!</td>
                     <td></td>
                     <td></td>
+                    <td></td>  
                 </tr>
             </table>
         </div>
@@ -64,7 +97,21 @@
 </body>
 
 <script>
-    $("td").draggable();
+    $(".drag").draggable();
+
+    
+    
+    if(localStorage.getItem('installed')){
+        $("#modern").show();
+        $("#modern").animate({opacity:"1"});
+        $("#modern").dblclick(function(){
+            window.location='modern.html';
+});
+    } else {
+        setInterval(function(){
+// flashing folder
+        $("#modern").animate({opacity:"0.75"},150).animate({opacity:"0.25"},150);
+        }, 300)}
 </script>
 
 </html>

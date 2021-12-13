@@ -8,53 +8,74 @@
     <link rel="text" href="../index.html">
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/83483ef559.js" crossorigin="anonymous"></script>
 </head>
 
 <script>
     var emails = new Array();
-    emails[0] = 'contenu du courriel 1';
-    emails[1] = 'contenu du courriel 2';
-    emails[2] = 'contenu du courriel 3';
-    emails[3] = 'contenu du courriel 4';
-    emails[4] = '<img autoplay muted loop width=\'100%\' src=\'img/apple-d.gif\'>';
+    emails[0] = '<div style="margin-bottom:2em;display:flex;align-items: center;"><img style="margin:2em 0"width="150px" height="150px" src="img/bestFriend.png"><p style="margin:2em">Sender: Tony T.<br>Object: Hope you like your new computer!</p></div><p>Hey friend!</p><p>If you can read this, it means I’m already dead…</p><p>Joking bud! It means you’ve successfully plugged in the old computer I sent you. Congrats!</p><p>You might have noticed that it’s not a top of the line machine, but as a first entry into the wonderful world of computer, I think it might be just what you need. Hey, this very machine you’re using at the moment was MY first computer and it did just fine! I went ahead and wiped most of the hard drives for you so you can have a fresh digital journey, free of my old dusty files. (I think the process kind of messed up the “D: drive” though… sorry about that, you’ll have to buy a new one if you need it.)</p><p>I could not resist leaving my old archive folders intact. So many precious memories! You know I’ve been a fan of net.art since the very beginning right? Well I’ve been secretly collecting and documenting some of the amazing work I found online over the years.</p><p>Check it out if you got the time.</p><p>No, really, you should really go check it out now! It’s A.M.A.Z.I.N.G.</p><p>Your dear friend,</p><p>Tony Turret</p><p>PS: There might also be some weird bug with files in the “C:Drive”, maybe keep away from it until we find a solution…</p>';
+    emails[1] = '<img autoplay muted loop width=\'100%\' src=\'img/apple-d.gif\'>';
+    emails[2] = '<div style="margin-bottom:2em;display:flex;align-items: center;"><img style="margin:2em 0"width="150px" height="150px" src="img/bestFriend.png"><p style="margin:2em">Sender: Tony T.<br>Object: DID YOU CHECKOUT MY ARCHIVE!?</p></div><p>Hello again!</p><p>I just wanted to make sure you hadn’t deleted my archives! I think I might have messed up their backup on my computer! I’ll have to do a little round trip across the country to fetch those back!</p><p>In the meantime, here’s a list of a couple archives I find particularly interesting:</p><p>&nbsp;	- TheWorldsFirstCollaborativeSentence</p><p>&nbsp;	- 0100101110101101org</p><p>&nbsp;	- rTMark</p><p>You should look for these folders in the archive!</p><p>By the way, I found this definition on a random Russian wiki:</p><p>	“Нетсталкинг — деятельность, осуществляемая при помощи интернета, связанная 	с поиском, анализом, классификацией, систематизацией, хранением и обменом 	субъективно интересной информацией.” </p><p>Oh you don’t speak Russian? Don’t worry about it, I got you. It talks about netstalking. The search, analysis and classification of interesting information found online for the satisfaction of the seeker. I have to say, it feel great to finally put a name on what I’ve been doing with my life! </p><p>Ok have a good one pal!</p><p>Tony Tuppet</p>';
+    emails[3] = '<div style="margin-bottom:2em;display:flex;align-items: center;"><img style="margin:2em 0"width="150px" height="150px" src="img/bestFriend.png"><p style="margin:2em">Sender: Tony T.<br>Object: You should (also) really look at this!</p></div><p>Hi again,</p><p>Really quick, I just remembered a couple more web archives for you to check out!</p><p>&nbsp;	- Jodi</p><p>&nbsp;	- Jennicam</p><p>(Oh that Jenni… I used to dream of her every night back in 1999!)</p><br><br><p>Ok, have a good day,</p><p>Tony Tunnel</p><p>PS: You better answer if you hear your door bell ring this Saturday! I bought a couple bus tickets I’m leaving tomorrow, destination: Your house bud! Can you believe it!?  See you soon <3</p>';
+    emails[4] = '<div style="margin-bottom:2em;display:flex;align-items: center;"><img style="margin:2em 0"width="150px" height="150px" src="img/bestFriend.png"><p style="margin:2em">Sender: Tony T.<br>Object: Object: Missed my bus!!!!111!1 but…</p></div><p>Hey bud…</p><p>I missed my f****g bus this morning… I knew I shouln’t have thrown away my alarm clock. My mother and her luminous therapy bullsh*t. I’m no early bird mom, you should know, of all people! </p><p>Anyway, I won’t be coming over anytime soon. Considering the fact that the tickets aren’t refundable, I might have to call my old boss and work the dish pit again…</p><p>In the meantime, I spent a little time developing a new kind of technology. I call it the WELCOMETOTHEFUTURENERD.exe</p><p>With this, you should have access to the files from today’s internet that I think were broken when you received the PC. If I remember correctly, the modern files are also in the archives. You just have to run the program once and it should do the rest from under the hood as they say!</p><br><br><p>Let me know if it works!</p><p>Tony Tardis</p>';
+    emails[5] = '<div style="margin-bottom:2em;display:flex;align-items: center;"><img style="margin:2em 0"width="150px" height="150px" src="img/bestFriend.png"><p style="margin:2em">Sender: Tony T.<br>Object: RE: forgot the damned attachement…</p></div><p>For sure I forget to send the f****g attachment with the email…</p><p>They sure never miss a chance to notify you that the useless “object” of the email is empty, but when it comes to sending your life’s work to your best friend they couldn’t car less!? Numnuts.</p><p>Anyway, here’s the file.</p><p>PS: You might have to reload the computer for the download to appear ! :S Weird bug, old computer.</p><br><p id="pc"><i id="paperclip" onclick="localStorage.setItem(`zip`,true)" class="fas fa-paperclip"></i><br>download.zip</p><br><p>Peace,</p><p>Tony Trouble</p><p></p>';
+    
 </script>
 
 <body>
     <div class="grid">
-        <div class="header">Welcome to your mailbox !</div>
+        <div class="header">Welcome to your mailbox!</div>
         <div class="container">
             <div class="left">
                 <ul>
                     <li id="email1" class="email-class"
-                        onclick="changeHTML('#email',emails[0]);setTimeout(function(){$('#email2').show()},5000);localStorage.setItem('read1', true);">
-                        Welcome bud!</li>
-                    <li id="email2" class="email-class"
-                        onclick="changeHTML('#email',emails[1]);setTimeout(function(){$('#email3').show()},13000);localStorage.setItem('read2', true);">
-                        Fwd: Re: Early Net.Art</li>
-                    <li id="email3" class="email-class"
-                        onclick="changeHTML('#email',emails[2]);setTimeout(function(){$('#email4').show()},8000);localStorage.setItem('read3', true);">
-                        Fwd: Communities</li>
-                    <li id="email4" class="email-class"
-                        onclick="changeHTML('#email',emails[3]);setTimeout(function(){$('#email5').show()},20000);localStorage.setItem('read4', true);">
-                        Fwd: Fwd: Fwd: r/place</li>
-                    <li id="email5" class="email-class"
-                        onclick="changeHTML('#email',emails[4]);localStorage.setItem('read5', true);">**SPAM** Very
+                        onclick="changeHTML('#email',emails[0]);setTimeout(function(){$('#email3').show()},5000);localStorage.setItem('read1', true);">
+                        Object: Hope you like your new computer!
+</li>
+<li id="email2" class="email-class"
+                        onclick="changeHTML('#email',emails[1]);localStorage.setItem('read2', true);">Object: **SPAM** Fwd: Very
                         nsfw. omg O_O</li>
+
+
+                    <li id="email3" class="email-class"
+                        onclick="changeHTML('#email',emails[2]);localStorage.setItem('read3', true);">
+                        Object: DID YOU CHECKOUT MY ARCHIVE!?
+</li>
+                    <li id="email4" class="email-class"
+                    onclick="changeHTML('#email',emails[3]);localStorage.setItem('read4', true);">
+                    Object: You should (also) really look at this!
+                    </li>
+
+                    <li id="email5" class="email-class"
+                        onclick="changeHTML('#email',emails[4]);setTimeout(function(){$('#email6').show()},3000);localStorage.setItem('read5', true);">
+                        Object: Missed my bus!!!!111!1 but…</li>
+
+                    <li id="email6" class="email-class"
+                        onclick="changeHTML('#email',emails[5]);localStorage.setItem('read6', true);">
+                        Object: RE: forgot the damned attachement…</li>
+                    
                 </ul>
 
             </div>
             <div class="right">
-                <div id="email">content here</div>
+                <div id="email"></div>
             </div>
         </div>
     </div>
 
 
     <script>
-        if (!localStorage.getItem("read1")) $("#email2").hide();
-        if (!localStorage.getItem("read2")) $("#email3").hide();
-        if (!localStorage.getItem("read3")) $("#email4").hide();
-        if (!localStorage.getItem("read4")) $("#email5").hide();
+        if (!localStorage.getItem("read1")) {$("#email3").hide()}
+
+        if (localStorage.getItem("netartaccess") || localStorage.getItem("netartaccess2")) {$("#email4").show()} else {$("#email4").hide()}
+
+        if (localStorage.getItem("netartaccess") && localStorage.getItem("netartaccess2")) {$("#email5").show()} else {$("#email5").hide()}
+
+        if (!localStorage.getItem("read5")) {$("#email6").hide()}
+
+       
+        
     </script>
 </body>
 

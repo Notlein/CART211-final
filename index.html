@@ -22,9 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
-    <!-- Custom JS -->
-    <script src="windowframe.js"></script>
-    <script src="script.js"></script>
+    
 
 
     <!-- Custom script : Array for the folders. Left in HTML for better control -->
@@ -47,10 +45,12 @@
         folder[9] = new Array("https://www.eggalone.com/", "Egg&nbsp;Alone&nbsp;-&nbsp;Rafael&nbsp;Rozendaal");
         folder[10] = new Array("https://monoskop.org/RTMark", "RTMark");
         folder[11] = new Array("https://conifer.rhizome.org/", "Conifer");
-        // folder[12] = new Array("","");
-        // folder[13] = new Array("","");
-        // folder[14] = new Array("","");
-        // folder[15] = new Array("","");
+        folder[11] = ["https://www.misternicehands.com/", "another from Rozendaal"];
+        folder[12] = new Array("https://artport.whitney.org/collection/DouglasDavis/historic/","rtprt");
+        folder[13] = new Array("https://rolandr.github.io/","rolandr");
+        folder[14] = new Array("https://vnsmatrix.net/","Your browser blocked VNS Matrix! How do you feel about that?");
+        folder[15] = new Array("folders/jennitube.html","jennicam");
+        folder[16] = new Array("https://0100101110101101.org/files/hybrids/00028/index.html","0100101110101101.org");
 
 
         function selectWebpage() {
@@ -68,7 +68,7 @@
 <body>
     <!-- Splash screen (loading...) -->
     <div id="start-screen">
-        <div><video src="video/splash.mp4" autoplay muted></div>
+        <div><video src="video/waitscreen.mp4" autoplay muted loop></div>
     </div>
 
     <main>
@@ -78,6 +78,8 @@
             id="menu-overlay-gauche">
 
             <!-- WARNING : Inverted order -->
+
+
 
             <!-- Trash -->
             <div id="trash" class="icon draggable" ondblclick='addwindowframe("trash.html", "The&nbsp;Dump")'>
@@ -104,9 +106,43 @@
             <script>
 
             </script>
-            <div class="icon draggable" ondblclick='addwindowframe("mailbox.html", "Mailbox")'>
+            <div class="icon draggable" ondblclick='$("#windowframe1").remove();addwindowframe("mailbox.html", "Mailbox")'>
                 <i id="icon1" class="fas fa-envelope"></i><span class="undericon">Mailbox</span>
             </div>
+
+            <div id="install" class="icon draggable" ondblclick='localStorage.setItem("installed",true)'>
+                <i class="fas fa-space-shuttle"></i><span class="undericon">WELCOMETOTHE<br>FUTURENERD.exe</span>
+            </div>
+            
+            <div id="zip" class="icon draggable" ondblclick='localStorage.setItem("install",true);setTimeout(function(){$("#install").show()},1500)'>
+                <i class="fas fa-file-archive"></i><span class="undericon">download.zip</span>
+            </div>
+
+            
+            <script>
+                var bga = new Array();
+        bga[0] = "bluescreen.png";
+        bga[1] = "felix.png";
+        bga[2] = "mac.png";
+        bga[3] = "tmnt.png";
+        bga[4] = "van.png";
+        bga[5] = "turq.png";
+        bga[6] = "tubes.png";
+        bga[7] = "windows.png";
+        bga[8] = "quickbg2.png";
+        function choosebg(){let rand = Math.floor(Math.random() * bga.length);
+            return background = bga[rand];};
+        
+            </script>
+            <div id="bg" class="icon draggable" ondblclick='addwindowframe("ee.txt","Cheat Codes")'>
+                <i class="fas fa-file-alt"></i><span class="undericon">list</span>
+            </div>
+            <div id="bg" class="icon draggable" ondblclick='$("main").css({"background-image":"url(backgrounds/"+choosebg()+")"})'>
+                <i class="fas fa-folder"></i><span class="undericon">backgrounds</span>
+            </div>
+            
+            
+
         </div>
 
         <!-- START MENU -->
@@ -122,9 +158,9 @@
                     <li onclick="addwindowframe('folders/D.html','|/$%/??(O&%?&*)&data.encrypted(*?&');openStart()">D:
                         drive</li>
 
-                    <!-- The actual content, sparated in folders. -->
+                    <!-- The actual content, separated in folders. -->
                     <li
-                        onclick="addwindowframe('folders/archives.html','My Archives.&nbsp;(Take Care of Them)');openStart()">
+                        onclick="addwindowframe('folders/archives.html','My&nbsp;Archives.&nbsp;(Take Care of Them)');openStart()">
                         Archives</li>
 
                     <!-- Lock the user on a lockscreen without a password to log on. Forgot your password ? That's too bad ;) Go play outside! -->
@@ -161,20 +197,44 @@
 
         <!-- FIN -->
     </main>
+<br><br>You might have found a bug ! Contact us so we know.
 
+<script src="windowframe.js"></script>
+<script src="script.js"></script>
     <!-- Coucou, le password est ici :) -->
     <script>
-        $("#mitsub").click(function () {
-            var value = $("#pw").val();
-            if (value === "!net.Art:)") {
-                logOn();
-            } else {
-                oops();
-            }
-        })
+        tryMe();
+        
 
         $(".draggable").draggable();
-    </script>
+
+        if(!localStorage.getItem("read5")){
+            uGotMail();
+            localStorage.setItem("nomail",true)}
+            
+        
+
+        
+    if(localStorage.getItem('install')){
+        $("#install").show();
+    } else {
+        $("#install").hide();
+    }
+    $("body").hover(function(){
+        if(localStorage.getItem('zip')){
+        $("#zip").show();
+    } else {
+        $("#zip").hide();
+    }
+     });
+    
+
+    
+    
+    
+            </script>
+            <!-- Custom JS -->
+
 </body>
 
 </html>

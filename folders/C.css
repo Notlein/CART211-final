@@ -154,3 +154,8 @@ iframe {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 99, 99, 0.5);
 }
+
+.drag:active{
+    color:white;
+    background-color:black;
+  }

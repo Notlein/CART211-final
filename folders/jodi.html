@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Rejected Art</title>
-    <link rel="stylesheet" href="archives.css">
+    <title>jodi</title>
+    <link rel="stylesheet" href="C.css">
 
     <script src="../windowframe.js"></script>
     <script src="../script.js"></script>
@@ -27,23 +27,20 @@
             <!-- 16x16 grid-table -->
             <table>
                 <tr>
-                    <td class="drag" ondblclick="window.location='https://hybrid.concordia.ca/max_go/';" id="icon1"><i
-                        class="fas fa-folder"></i><br>reject#1</td>
-                    <td class="drag" ondblclick="window.location='https://hybrid.concordia.ca/l_cuss/';" id="icon2"><i
-                        class="fas fa-folder"></i><br>reject#2</td>
-                    <td class="drag" ondblclick="window.location='https://hybrid.concordia.ca/max_go/final/';" id="icon3"><i
-                        class="fas fa-folder"></i><br>reject#3
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
+                    <td class="drag" ondblclick="addwindowframe('../txt/jodi.txt','Read Me !')"><i style="font-size:3em" class="far fa-file-alt"></i><br>JODI.txt</td>
+                    
+                    <td class="drag" ondblclick="addwindowframe('https://wwwwwwwww.jodi.org','JODI1')"><i style="font-size:3em" class="fas fa-globe"></i><br>website1</td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
+                    <td class="drag" ondblclick="addwindowframe('https://wwwwwwww.jodi.org','JODI2')"><i style="font-size:3em" class="fas fa-globe"></i><br>website2</td>
+                    <td></td>
+                    <td class="drag" ondblclick="addwindowframe('https://wwwwwww.jodi.org','JODI3')"><i style="font-size:3em" class="fas fa-globe"></i><br>website3</td>
+                </tr>
+                <tr>
+                    <td class="drag" ondblclick="addwindowframe('https://wwwwww.jodi.org','JODI4')"><i style="font-size:3em" class="fas fa-globe"></i><br>website4</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -51,7 +48,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td class="drag" ondblclick="addwindowframe('https://wwwww.jodi.org','JODI5')"><i style="font-size:3em" class="fas fa-globe"></i><br>website5</td>
                     <td></td>
                 </tr>
             </table>
@@ -60,9 +57,8 @@
 </body>
 
 <script>
-    $("#icon1").draggable();
-    $("#icon2").draggable();
-    $("#icon3").draggable();
+    $("td").draggable();
+    
 </script>
 
 </html>

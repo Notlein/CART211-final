@@ -47,6 +47,7 @@ function logOff() {
     logoffstyle.zIndex = 999;
     logoffstyle.opacity = '1';
   }
+  
 
 }
 
@@ -170,3 +171,47 @@ function sign() {
     initSign = false;
   }
 }
+
+function uGotMail(){
+  addwindowframe('folders/alertmail.html','You\'ve&nbsp;got&nbsp;mail&nbsp;!');
+  $("iframe").remove();
+  $(".ui-resizable-handle").remove();
+  $(".fullscr").remove();
+  
+  $("#windowframe1").height(0);
+  $("#windowframe1").width("25vw");
+  $("#windowframe1").css({"top":"0"});
+  $("#topframe1").css({"height":"65px","background-color":"black","color":"white","font-size":"18px","padding": "25px 2em 0","display": "flex",
+  });
+}
+
+function tryMe() {
+
+  $("#mitsub").click(function () {
+    var value = $("#pw").val();
+    if (value === "!net.Art:)") {
+        logOn();
+    } else {
+        oops();
+    }
+  })
+
+  
+}
+
+
+
+
+
+const input = document.getElementById("pw");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("mitsub").click();
+  }
+});

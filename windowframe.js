@@ -95,6 +95,7 @@ function addwindowframe(content, title) {
     const cID = document.getElementById(b.id);
     // special function to make sure the windowframe that's clicked is on top of the others. the z increment is also repeated at the end of the whole addwindowframe function. 
     b.addEventListener("mousedown", function () {
+        if(sessionStorage.getItem('zip')){$('#zip').show()}
         cID.style.zIndex = z;
         z++;
     });
@@ -113,6 +114,7 @@ function addwindowframe(content, title) {
     // 'Kill' or close button
     currentK.addEventListener("click", function () {
         document.body.removeChild(b);
+        
     });
 
     // Fullscreen (can still be dragged)
@@ -197,3 +199,4 @@ function killAll() {
     $(".windowframe").remove();
     $(".bttm-icon").remove();
 }
+
